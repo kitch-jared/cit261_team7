@@ -17,7 +17,14 @@ public class Hurricane_game {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Player playerOne = new Player();  
+      Player playerOne = new Player(); 
+      
+      // This is just a test to see if the Player function works
+      playerOne.setName("Fred Flintstone");
+      
+      String playerInfo = playerOne. toString();
+      System.out.println(playerInfo);
+      
     }
     
 }
