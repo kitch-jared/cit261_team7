@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -36,8 +37,6 @@ public class MainMap implements Serializable{
         this.numColumns = numColumns;
     }
 
-    
-
     public Location[][] getMatrix() {
         return matrix;
     }
@@ -45,6 +44,43 @@ public class MainMap implements Serializable{
     public void setMatrix(Location[][] matrix) {
         this.matrix = matrix;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 29 * hash + this.numRows;
+        hash = 29 * hash + this.numColumns;
+        hash = 29 * hash + Arrays.deepHashCode(this.matrix);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MainMap other = (MainMap) obj;
+        if (this.numRows != other.numRows) {
+            return false;
+        }
+        if (this.numColumns != other.numColumns) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.matrix, other.matrix)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "MainMap{" + "numRows=" + numRows + ", numColumns=" + numColumns + ", matrix=" + matrix + '}';
+    }
+    
+    
     ////////////////////////////////////////////
     // METHOD
     ///////////////////////////////////////////
