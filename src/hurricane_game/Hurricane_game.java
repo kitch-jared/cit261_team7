@@ -5,6 +5,8 @@
  */
 package hurricane_game;
 
+import model.Player;
+
 /**
  *
  * @author maloriegomm
@@ -15,9 +17,7 @@ public class Hurricane_game {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        System.out.println("Hello World!");
+      Player playerOne = new Player();  
     }
     
 }
