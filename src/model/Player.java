@@ -14,19 +14,9 @@ import java.io.Serializable;
 public class Player implements Serializable{
     
     private String name;
-    private int hitPoints;
     
     public Player() {
     }
-
-    public int getHitPoints() {
-        return hitPoints;
-    }
-
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
-    }
-   
 
     public String getName() {
         return name;
@@ -35,8 +25,5 @@ public class Player implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-   
-    
-    
-   
+
 }
