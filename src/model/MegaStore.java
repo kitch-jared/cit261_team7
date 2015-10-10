@@ -9,6 +9,8 @@ package model;
  *
  * @author maloriegomm
  */
+
+//I don't know if we need this
 public class MegaStore {
     
 }

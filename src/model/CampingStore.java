@@ -11,6 +11,8 @@ import java.io.Serializable;
  *
  * @author maloriegomm
  */
+
+//I dont think we need this class
 public class CampingStore implements Serializable{
     
 }
