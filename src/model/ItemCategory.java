@@ -11,6 +11,11 @@ import java.io.Serializable;
  *
  * @author maloriegomm
  */
+
+
+//We might no need this class
+
 public class ItemCategory implements Serializable{
+    
     
 }
