@@ -5,10 +5,12 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maloriegomm
  */
-public class InventoryList {
+public class InventoryList implements Serializable{
     
 }

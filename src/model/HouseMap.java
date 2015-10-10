@@ -5,10 +5,12 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maloriegomm
  */
-public class HouseMap {
+public class HouseMap implements Serializable{
     
 }
