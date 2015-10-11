@@ -19,6 +19,7 @@ public class MainMap implements Serializable{
     private Location[][] matrix;
 
     public MainMap() {
+        matrix = new Location[numRows][numColumns];
     }
 
     public int getNumRows() {
@@ -91,12 +92,12 @@ public class MainMap implements Serializable{
         
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numColumns; col++) {
-                Location newLocation = Location();
+                Location newLocation = new Location();
                 newLocation.setCol(col);
                 newLocation.setRow(row);
             }
         }
-         
+        
     }
 
     

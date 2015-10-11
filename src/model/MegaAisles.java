@@ -5,10 +5,39 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
- * @author maloriegomm
+ * @author Maxine
  */
-public class MegaAisles {
+public class MegaAisles implements Serializable {
     
+    private SuppliesList item;
+    private SuppliesList itemCost;
+
+    public MegaAisles() {
+    }
+    
+    public SuppliesList getItem() {
+        return item;
+    }
+
+    public void setItem(SuppliesList item) {
+        this.item = item;
+    }
+
+    public SuppliesList getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(SuppliesList itemCost) {
+        this.itemCost = itemCost;
+    }
+
+    @Override
+    public String toString() {
+        return "MegaAisles{item=" + item + ", itemCost=" + itemCost + '}';
+    }
+           
 }
