@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * @author maloriegomm
  */
+
 public class MegaStore implements Serializable {
     
     private int row;
@@ -96,5 +97,10 @@ public class MegaStore implements Serializable {
             aisle.setRow(row);
         }
     }
-    
 }
+
+//I don't know if we need this
+/*public class MegaStore {
+>>>>>>> origin/master
+    
+}*/

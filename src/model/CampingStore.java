@@ -5,10 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maloriegomm
  */
-public class CampingStore {
+
+//I dont think we need this class
+public class CampingStore implements Serializable{
     
 }

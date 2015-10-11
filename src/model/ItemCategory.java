@@ -5,10 +5,17 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author maloriegomm
  */
-public class ItemCategory {
+
+
+//We might no need this class
+
+public class ItemCategory implements Serializable{
+    
     
 }
