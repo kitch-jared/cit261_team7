@@ -97,10 +97,5 @@ public class MegaStore implements Serializable {
             aisle.setRow(row);
         }
     }
-}
 
-//I don't know if we need this
-/*public class MegaStore {
->>>>>>> origin/master
-    
-}*/
+}
