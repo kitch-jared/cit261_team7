@@ -97,4 +97,5 @@ public class InventoryList implements Serializable{
     //METHODS
     ////////////////////////////////////
     
+    
 }
