@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author maloriegomm
  */
 
-//I just added getters, setters, equals, hash, and toSting
+//Should I list out all the items here???
 
 class Item implements Serializable{
     
