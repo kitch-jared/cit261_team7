@@ -37,10 +37,6 @@ public class Deliveries implements Serializable {
         this.numberOfDeliveries = numberOfDeliveries;
     }
 
-    public float getDeliveryTime() {
-        return deliveryTime;
-    }
-
     public void setDeliveryTime(int deliveryTime) {
         this.deliveryTime = deliveryTime;
     }
