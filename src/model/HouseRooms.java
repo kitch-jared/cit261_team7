@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -14,7 +16,7 @@ import java.io.Serializable;
 public class HouseRooms implements Serializable {
     
     private ItemCategory survivalPoints;
-    private SuppliesList item;
+    private Item item;
     private int numberOfItems;
 
     public HouseRooms() {
@@ -28,11 +30,11 @@ public class HouseRooms implements Serializable {
         this.survivalPoints = survivalPoints;
     }
 
-    public SuppliesList getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(SuppliesList item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 

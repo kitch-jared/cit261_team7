@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -13,25 +15,25 @@ import java.io.Serializable;
  */
 public class MegaAisles implements Serializable {
     
-    private SuppliesList item;
-    private SuppliesList itemCost;
+    private Item item;
+    private Item itemCost;
 
     public MegaAisles() {
     }
     
-    public SuppliesList getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(SuppliesList item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 
-    public SuppliesList getItemCost() {
+    public Item getItemCost() {
         return itemCost;
     }
 
-    public void setItemCost(SuppliesList itemCost) {
+    public void setItemCost(Item itemCost) {
         this.itemCost = itemCost;
     }
 
