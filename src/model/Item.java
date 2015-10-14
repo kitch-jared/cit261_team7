@@ -19,6 +19,7 @@ class Item implements Serializable{
     
     private String name;
     private int survivalPoints;
+    private double itemCost;
     private String categoryName;
 
     public Item() {
@@ -47,14 +48,22 @@ class Item implements Serializable{
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }  
-    
 
+    public double getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(double itemCost) {
+        this.itemCost = itemCost;
+    }
+   
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + this.survivalPoints;
-        hash = 29 * hash + Objects.hashCode(this.categoryName);
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.name);
+        hash = 83 * hash + this.survivalPoints;
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.itemCost) ^ (Double.doubleToLongBits(this.itemCost) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.categoryName);
         return hash;
     }
 
@@ -73,6 +82,9 @@ class Item implements Serializable{
         if (this.survivalPoints != other.survivalPoints) {
             return false;
         }
+        if (Double.doubleToLongBits(this.itemCost) != Double.doubleToLongBits(other.itemCost)) {
+            return false;
+        }
         if (!Objects.equals(this.categoryName, other.categoryName)) {
             return false;
         }
@@ -81,13 +93,14 @@ class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "name=" + name + ", survivalPoints=" + survivalPoints + ", categoryName=" + categoryName + '}';
+        return "Item{" + "name=" + name + ", survivalPoints=" + survivalPoints + ", itemCost=" + itemCost + ", categoryName=" + categoryName + '}';
     }
     
     ///////////////////////////////////
     //METHODS
     ///////////////////////////////////
+
     
-       
+    
     
 }
