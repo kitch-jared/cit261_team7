@@ -15,7 +15,8 @@ public class Deliveries implements Serializable {
     
     private boolean makeDeliveries;
     private int numberOfDeliveries;
-    private int deliveryTime;
+    private double deliveryTime;
+    private double deliveryMoney;
 
     public Deliveries() {
     }
@@ -44,12 +45,29 @@ public class Deliveries implements Serializable {
         this.deliveryTime = deliveryTime;
     }
 
+    public double getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(double deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public double getDeliveryMoney() {
+        return deliveryMoney;
+    }
+
+    public void setDeliveryMoney(double deliveryMoney) {
+        this.deliveryMoney = deliveryMoney;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + (this.makeDeliveries ? 1 : 0);
-        hash = 67 * hash + this.numberOfDeliveries;
-        hash = 67 * hash + this.deliveryTime;
+        int hash = 5;
+        hash = 73 * hash + (this.makeDeliveries ? 1 : 0);
+        hash = 73 * hash + this.numberOfDeliveries;
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.deliveryTime) ^ (Double.doubleToLongBits(this.deliveryTime) >>> 32));
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.deliveryMoney) ^ (Double.doubleToLongBits(this.deliveryMoney) >>> 32));
         return hash;
     }
 
@@ -68,7 +86,10 @@ public class Deliveries implements Serializable {
         if (this.numberOfDeliveries != other.numberOfDeliveries) {
             return false;
         }
-        if (this.deliveryTime != other.deliveryTime) {
+        if (Double.doubleToLongBits(this.deliveryTime) != Double.doubleToLongBits(other.deliveryTime)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.deliveryMoney) != Double.doubleToLongBits(other.deliveryMoney)) {
             return false;
         }
         return true;
@@ -76,8 +97,10 @@ public class Deliveries implements Serializable {
 
     @Override
     public String toString() {
-        return "Deliveries{" + "makeDeliveries=" + makeDeliveries + ", numberOfDeliveries=" + numberOfDeliveries + ", deliveryTime=" + deliveryTime + '}';
+        return "Deliveries{" + "makeDeliveries=" + makeDeliveries + ", numberOfDeliveries=" + numberOfDeliveries + ", deliveryTime=" + deliveryTime + ", deliveryMoney=" + deliveryMoney + '}';
     }
+
+    
     
     ///////////////////////////////////////////////
     // METHODS
