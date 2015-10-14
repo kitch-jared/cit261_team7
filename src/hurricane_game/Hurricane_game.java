@@ -5,6 +5,7 @@
  */
 package hurricane_game;
 
+import model.MainMap;
 import model.Player;
 
 /**
@@ -24,6 +25,11 @@ public class Hurricane_game {
       
       String playerInfo = playerOne. toString();
       System.out.println(playerInfo);
+      
+      MainMap mainMap = new MainMap();
+        mainMap.initialize();
+        
+        System.out.println(mainMap.toString());
       
     }
     

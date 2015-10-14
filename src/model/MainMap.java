@@ -33,16 +33,52 @@ public class MainMap implements Serializable {
     // METHODS
     ///////////////////////////////////////
     
+//    public String toString() {
+//        String rtn = "";
+//        
+//        for(int row = 0; row < NUM_ROWS; row++) {
+//           for(int col = 0; col < NUM_COLS; col++) {
+//               if (matrix[row][col] == null) {
+//                   System.out.println("x ");
+//               }
+//           }
+//        }
+//        return null;
+//    }
+    
+    
+    //this is just me trying to get something to show up it's just 12 "x " when you run the 
+    //Hurricane_game file
     public String toString() {
         String rtn = "";
         
         for(int row = 0; row < NUM_ROWS; row++) {
-           for(int col = 0; col < NUM_COLS; col++) {
-               if (matrix[row][col] == null) {
-                   System.out.println("x ");
-               }
-           }
+            for(int col = 0; col < NUM_COLS; col++) {
+                if(matrix[row][col] == null) {
+                    rtn += "x  ";
+                }
+                else{
+                   rtn += "x  "; 
+                }
+            }
+            rtn += "\n";
         }
-        return null;
+        return rtn + "this worked";
     }
+    
+    
+    public void initialize() {
+      
+        for(int row = 0; row < NUM_ROWS; row++) {
+            for(int col = 0; col < NUM_COLS; col++) {
+                Location location = new Location();
+                location.setCol(col);
+                location.setRow(row);
+                
+                matrix[row][col] = location;
+            }
+        }
+        
+    }
+    
 }
