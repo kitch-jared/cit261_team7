@@ -15,7 +15,6 @@ public class Game implements Serializable {
     
     private int survivalPoints;
     private int budget;
-    private int moneyEarned;
     private int timeRemaining;
     private int numberOfPointsEarned;
 
