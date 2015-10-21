@@ -37,14 +37,6 @@ public class Game implements Serializable {
         this.budget = budget;
     }
 
-    public int getMoneyEarned() {
-        return moneyEarned;
-    }
-
-    public void setMoneyEarned(int moneyEarned) {
-        this.moneyEarned = moneyEarned;
-    }
-
     public int getTimeRemaining() {
         return timeRemaining;
     }
@@ -60,15 +52,14 @@ public class Game implements Serializable {
     public void setNumberOfPointsEarned(int numberOfPointsEarned) {
         this.numberOfPointsEarned = numberOfPointsEarned;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.survivalPoints;
-        hash = 97 * hash + this.budget;
-        hash = 97 * hash + this.moneyEarned;
-        hash = 97 * hash + this.timeRemaining;
-        hash = 97 * hash + this.numberOfPointsEarned;
+        hash = 53 * hash + this.survivalPoints;
+        hash = 53 * hash + this.budget;
+        hash = 53 * hash + this.timeRemaining;
+        hash = 53 * hash + this.numberOfPointsEarned;
         return hash;
     }
 
@@ -87,9 +78,6 @@ public class Game implements Serializable {
         if (this.budget != other.budget) {
             return false;
         }
-        if (this.moneyEarned != other.moneyEarned) {
-            return false;
-        }
         if (this.timeRemaining != other.timeRemaining) {
             return false;
         }
@@ -101,9 +89,9 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "survivalPoints=" + survivalPoints + ", budget=" + budget + ", moneyEarned=" + moneyEarned + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + '}';
+        return "Game{" + "survivalPoints=" + survivalPoints + ", budget=" + budget + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + '}';
     }
-    
+   
     ///////////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////////////
@@ -111,5 +99,5 @@ public class Game implements Serializable {
     /* Need to set survival points, budget, calculate earned money, remaining time,
        and points earned
     */
-    
+
 }
