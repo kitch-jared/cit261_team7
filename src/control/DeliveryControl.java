@@ -11,4 +11,25 @@ package control;
  */
 public class DeliveryControl {
     
+    public int calcNewTimeAfterDelivery(boolean makeDeliveries, int timeRemaining){
+        
+        if (!makeDeliveries) {
+		return timeRemaining;
+        }
+        else {
+            if (makeDeliveries) {
+                int deliveryTime = timeRemaining - 2;
+                return deliveryTime;
+            }
+        }
+        int deliveryTime = timeRemaining - 2;
+               
+	if (deliveryTime < 0) {
+		return - 1;
+        }
+	
+	return deliveryTime;
+
+
+    }
 }
