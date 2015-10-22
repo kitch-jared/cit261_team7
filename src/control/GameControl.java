@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
-
-import java.io.Serializable;
+package control;
 
 /**
  *
  * @author maloriegomm
  */
-
-
-//We might no need this class
-
-public class ItemCategory implements Serializable{
-    
+public class GameControl {
     
 }
