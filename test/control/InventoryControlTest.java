@@ -70,4 +70,29 @@ public class InventoryControlTest {
 //        fail("The test case is a prototype.");
     }
     
+     /***********************************************************
+     * Test Case #3
+     ***********************************************************/
+    
+    @Test
+    public void testcalcSurvivalPointsEarned() {
+        System.out.println("calcSurvivalPointsEarned");
+        
+        System.out.println("Test Case #3");
+        
+        int quantity = 100.0;
+        int deliveryMoney = 25.0;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        int expResult = 125.0;
+        int result = instance.calcAddMoneyEarned(budget, deliveryMoney);
+        
+        
+        assertEquals(expResult, result, 0.0);
+ 
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+    
 }
