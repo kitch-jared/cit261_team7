@@ -15,18 +15,18 @@ import java.util.Objects;
  */
 public class HouseRooms implements Serializable {
     
-    private ItemCategory survivalPoints;
+    private Item survivalPoints;
     private Item item;
     private int numberOfItems;
 
     public HouseRooms() {
     }
     
-    public ItemCategory getSurvivalPoints() {
+    public Item getSurvivalPoints() {
         return survivalPoints;
     }
 
-    public void setSurvivalPoints(ItemCategory survivalPoints) {
+    public void setSurvivalPoints(Item survivalPoints) {
         this.survivalPoints = survivalPoints;
     }
 
