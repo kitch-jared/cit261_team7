@@ -46,17 +46,10 @@ public class InventoryControl {
     }
     
     
-    public int calcSurvivalPointsEarned(int currentSurvivalPoints, int survivalPoints, String itemsCurrent, String name){
+    public int calcSurvivalPointsEarned(int currentSurvivalPoints, int survivalPoints, Game itemsCurrent, String name){
     
         
-        for(String str: itemsCurrent) {
-            if(str.trim().contains(name))
-            return true;
-        }
-        return false;
-        if (itemsCurrent){
-            return -1;
-        }
+       // I need to wirte an if statement to check if the name is in the itemsCurrent array
         if (survivalPoints <= 0){
             return -1;
         }
