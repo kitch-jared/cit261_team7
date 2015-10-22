@@ -17,36 +17,57 @@ public class InventoryControlTest {
     public InventoryControlTest() {
     }
 
-    /**
-     * Test of calcAddMoneyEarned method, of class InventoryControl.
-     */
+    /***********************************************************
+     * Test Case #1
+     ***********************************************************/
+    
     @Test
-    public void testCalcAddMoneyEarned() {
+    public void testCalcMoneySpent() {
+        System.out.println("calcMoneySpent");
+        
+        System.out.println("Test Case #1");
+        
+        double budget = 150.0;
+        double itemCost = 20.0;
+        String name = "Tent";
+        int quantity = 1;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = 130.0;
+        double result = instance.calcMoneySpent(budget, itemCost, name, quantity);
+        
+        
+        assertEquals(expResult, result, 0.0);
+ 
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+    
+    
+      /***********************************************************
+     * Test Case #2
+     ***********************************************************/
+    
+    @Test
+    public void testcalcAddMoneyEarned() {
         System.out.println("calcAddMoneyEarned");
         
-        /**************************
-         * Test Case #1
-         **************************/
-        System.out.println("/tTest Case #1");
+        System.out.println("Test Case #2");
         
-        //input values for test case #1
         double budget = 100.0;
         double deliveryMoney = 25.0;
         
-        double expResult = 125.0; // expected output returned
-
-        
-        // create instance of InventoryControl class
         InventoryControl instance = new InventoryControl();
         
-        // call function of InventoryControl class
+        double expResult = 125.0;
         double result = instance.calcAddMoneyEarned(budget, deliveryMoney);
-
-        // campare expected return value with actual value returned
+        
+        
         assertEquals(expResult, result, 0.0);
-
+ 
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
     
 }

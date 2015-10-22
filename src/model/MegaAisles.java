@@ -17,6 +17,7 @@ public class MegaAisles implements Serializable {
     
     private Item item;
     private Item itemCost;
+    public int quantity;
 
     public MegaAisles() {
     }

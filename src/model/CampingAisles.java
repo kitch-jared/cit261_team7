@@ -21,6 +21,7 @@ public class CampingAisles implements Serializable{
     //I think we want to pull out items from the Item class.
     private Item items;
     private Item itemCosts;
+    public int quantity;
   
     public CampingAisles() {
     }
