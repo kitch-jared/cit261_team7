@@ -44,4 +44,30 @@ public class InventoryControl {
         
         return budget;       
     }
+    
+    
+    public int calcSurvivalPointsEarned(int currentSurvivalPoints, int survivalPoints, String itemsCurrent, String name){
+    
+        
+        for(String str: itemsCurrent) {
+            if(str.trim().contains(name))
+            return true;
+        }
+        return false;
+        if (itemsCurrent){
+            return -1;
+        }
+        if (survivalPoints <= 0){
+            return -1;
+        }
+        
+        int quantity = 1;
+        
+        survivalPoints = 5;
+        int totalItemsPoints = quantity * survivalPoints; 
+
+        currentSurvivalPoints = currentSurvivalPoints + totalItemsPoints;
+        
+        return currentSurvivalPoints;
+    }
 }
