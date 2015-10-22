@@ -15,7 +15,7 @@ public class Game implements Serializable {
     
     private int survivalPoints;
     private int budget;
-    private int timeRemaining;
+    public int timeRemaining;
     private int numberOfPointsEarned;
 
     public Game() {
@@ -37,7 +37,7 @@ public class Game implements Serializable {
         this.budget = budget;
     }
 
-    public int getTimeRemaining() {
+    public double getTimeRemaining() {
         return timeRemaining;
     }
 
