@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class InventoryList implements Serializable{
     
+    //this need to be an array!!
     private String itemsCurrent;
     private String itemsNeeded;
     private int currentSurvivalPoints;
