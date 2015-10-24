@@ -28,9 +28,9 @@ public class DeliveryControlTest {
     }
 
     /**
-     * Test of calcNewTimeAfterDelivery method, of class DeliveryControl.
+     * Test #1: calcNewTimeAfterDelivery method, of class DeliveryControl.
      */
-    @Test
+    /*@Test
     public void testCalcNewTimeAfterDelivery() {
         System.out.println("calcNewTimeAfterDelivery");
         boolean makeDelivery = true;
@@ -39,8 +39,22 @@ public class DeliveryControlTest {
         int expResult = 70;
         int result = instance.calcNewTimeAfterDelivery(makeDelivery, timeRemaining);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
+
+    /* *
+    * Test #2:checkDeliveries method
+    */
     
+    @Test
+    public void testcheckDeliveries() {
+        System.out.println("checkDeliveries");
+        boolean makeDeliveries = true;
+        int numberOfDeliveries = 10;
+        DeliveryControl instance = new DeliveryControl();
+        int expResult = 9;
+        int result = instance.calcNewTimeAfterDelivery(makeDeliveries, numberOfDeliveries);
+        assertEquals(expResult, result);
+    }
 }
+
+
