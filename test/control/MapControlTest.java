@@ -28,22 +28,34 @@ public class MapControlTest {
     }
 
     /**
-     * Test of calc method, of class MapControl.
+     * Test 1: calcTimeRemaing(timeRemaining, timeToDeduct, deliveryTime) method
      */
     @Test
-    public void testCalc() {
+    public void testCalcTimeRemaining() {
         System.out.println("calc");
         int timeRemaining = 72;
         int timeToDeduct = 12;
         int deliveryTime = 30;
         MapControl instance = new MapControl();
         int expResult = 30;
-        int result = instance.calc(timeRemaining, timeToDeduct, deliveryTime);
+        int result = instance.calcTimeRemaining(timeRemaining, timeToDeduct, deliveryTime);
         assertEquals(expResult, result);
         
         System.out.println(result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+        }
+    /**
+     * Test 2: calcTimeToDeduct() method
+     */
+    @Test
+    public void testCalcTimeToDeduct() {
+        System.out.println("calc");
+        int timeRemaining = 50;
+        int timeToDeduct = 1;
+        MapControl instance = new MapControl();
+        int expResult = 49;
+        int result = instance.calcTimeToDeduct(timeRemaining);
+        assertEquals(expResult, result);
+        
+        System.out.println(result);
+        }    
 }
