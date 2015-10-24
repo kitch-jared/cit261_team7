@@ -15,7 +15,7 @@ import java.util.Objects;
 
 //Should I list out all the items here???
 
-class Item implements Serializable{
+public class Item implements Serializable{
     
     private String name;
     private int survivalPoints;
