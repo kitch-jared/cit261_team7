@@ -11,6 +11,22 @@ package control;
  */
 public class DeliveryControl {
     
+    public void checkDeliveries(boolean makeDeliveries, int numberOfDeliveries){
+    
+        if (!makeDeliveries) {
+                System.out.println("No Deliveries");
+        }
+        
+	else {
+            if (makeDeliveries) {
+		for (int d = 10; d <= 10; d--) // need to rewrite this code; not working
+                    numberOfDeliveries = 10 - d;
+
+                System.out.println("Yes, you have " + numberOfDeliveries); 
+            }
+        }
+    }
+    
     public int calcNewTimeAfterDelivery(boolean makeDeliveries, int timeRemaining){
         
         if (!makeDeliveries) {
