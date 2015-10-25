@@ -15,7 +15,7 @@ import model.Game;
 public class InventoryControl {
     
     // function for money earned
-        public double calcAddMoneyEarned(double budget, double deliveryMoney){
+    public double calcAddMoneyEarned(double budget, double deliveryMoney){
     
             if (budget < 0){
                 return -1;
