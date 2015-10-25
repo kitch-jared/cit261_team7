@@ -79,14 +79,15 @@ public class InventoryControlTest {
         System.out.println("calcSurvivalPointsEarned");
         
         System.out.println("Test Case #3");
+                
+        int survivalPoints = 5;
+        int numberOfItems = 9;
         
-        int quantity = 1;
-        int deliveryMoney = 25;
         
         InventoryControl instance = new InventoryControl();
         
-        int expResult = 125;
-        int result = instance.calcSurvivalPointsEarned(quantity, deliveryMoney);
+        int expResult = 50;
+        int result = instance.calcSurvivalPointsEarned(survivalPoints);
         
         
         assertEquals(expResult, result, 0.0);
@@ -95,4 +96,28 @@ public class InventoryControlTest {
 //        fail("The test case is a prototype.");
     }
     
+     /***********************************************************
+     * Test Case #4
+     ***********************************************************/
+    
+    @Test
+    public void testcalcAddMoneyEarned() {
+        System.out.println("calcAddMoneyEarned");
+        
+        System.out.println("Test Case #2");
+        
+        double budget = 100.0;
+        double deliveryMoney = 25.0;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = 125.0;
+        double result = instance.calcAddMoneyEarned(budget, deliveryMoney);
+        
+        
+        assertEquals(expResult, result, 0.0);
+ 
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
 }

@@ -46,20 +46,30 @@ public class InventoryControl {
     }
     
     
-    public int calcSurvivalPointsEarned(int currentSurvivalPoints, int survivalPoints, Game itemsCurrent, String name){
-    
+    public int calcSurvivalPointsEarned(int survivalPoints){
+            
+        // We will need to add  String itemsCurrent, String name to perameters once I figure out how to use them
+        // I need to make it so that the program runs through the itemsCurrent array and gets the
+        // survival points assiciated with each of the items in the itemsCurrent array 
+            
         
-       // I need to write an if statement to check if the name is in the itemsCurrent array
-        if (survivalPoints <= 0){
-            return -1;
+        int numberOfItems = 9;
+        int i;
+        
+        for (i = 0; i <= numberOfItems; i = i+1){
+            // figure out the survival points based on the name of the item
+            if (i <= 0){
+                survivalPoints = 5; 
+            } else{
+                 survivalPoints += 5; 
+            } 
         }
         
-        int quantity = 1;
-        
-        survivalPoints = 5;
-        int totalItemsPoints = quantity * survivalPoints; 
+        System.out.println(survivalPoints);
 
-        currentSurvivalPoints = currentSurvivalPoints + totalItemsPoints;
+        int currentSurvivalPoints = survivalPoints;
+        
+        System.out.println(currentSurvivalPoints);
         
         return currentSurvivalPoints;
     }
