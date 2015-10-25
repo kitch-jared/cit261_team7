@@ -65,12 +65,24 @@ public class InventoryControl {
             } 
         }
         
+        //Just checking 
         System.out.println(survivalPoints);
 
         int currentSurvivalPoints = survivalPoints;
         
+        //Just checking 
         System.out.println(currentSurvivalPoints);
         
         return currentSurvivalPoints;
     }
+    
+    
+    // Calculate how many survival point the player still needs to collect
+    public int calcSurvivalPointsNeeded(int currentSurvivalPoints, int neededSurvivalPoints){
+        
+        int remainingSurvivalPoints = neededSurvivalPoints - currentSurvivalPoints;
+        return remainingSurvivalPoints;
+    }
+
+    
 }

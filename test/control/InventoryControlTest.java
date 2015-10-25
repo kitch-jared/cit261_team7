@@ -101,20 +101,19 @@ public class InventoryControlTest {
      ***********************************************************/
     
     @Test
-    public void testcalcAddMoneyEarned() {
-        System.out.println("calcAddMoneyEarned");
+    public void testcalcSurvivalPointsNeeded() {
+        System.out.println("calcSurvivalPointsNeeded");
         
-        System.out.println("Test Case #2");
-        
-        double budget = 100.0;
-        double deliveryMoney = 25.0;
+        System.out.println("Test Case #4");
+
+        int currentSurvivalPoints = 350;
+        int neededSurvivalPoints = 500;
         
         InventoryControl instance = new InventoryControl();
         
-        double expResult = 125.0;
-        double result = instance.calcAddMoneyEarned(budget, deliveryMoney);
-        
-        
+        int expResult = 150;
+        int result = instance.calcSurvivalPointsNeeded(currentSurvivalPoints, neededSurvivalPoints);
+
         assertEquals(expResult, result, 0.0);
  
         // TODO review the generated test code and remove the default call to fail.

@@ -17,9 +17,11 @@ public class InventoryList implements Serializable{
     
     public String itemsCurrent [];
     private String itemsNeeded [];
-    private int currentSurvivalPoints;
-    private int neededSurvivalPoints;
+    public int currentSurvivalPoints;
+    public int neededSurvivalPoints;
+    private int remainingSurvivalPoints;
 
+    
     public InventoryList() {
     }
 
