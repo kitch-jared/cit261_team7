@@ -49,7 +49,7 @@ public class InventoryControl {
     public int calcSurvivalPointsEarned(int currentSurvivalPoints, int survivalPoints, Game itemsCurrent, String name){
     
         
-       // I need to wirte an if statement to check if the name is in the itemsCurrent array
+       // I need to write an if statement to check if the name is in the itemsCurrent array
         if (survivalPoints <= 0){
             return -1;
         }

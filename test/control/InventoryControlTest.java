@@ -80,13 +80,13 @@ public class InventoryControlTest {
         
         System.out.println("Test Case #3");
         
-        int quantity = 100.0;
-        int deliveryMoney = 25.0;
+        int quantity = 1;
+        int deliveryMoney = 25;
         
         InventoryControl instance = new InventoryControl();
         
-        int expResult = 125.0;
-        int result = instance.calcAddMoneyEarned(budget, deliveryMoney);
+        int expResult = 125;
+        int result = instance.calcSurvivalPointsEarned(quantity, deliveryMoney);
         
         
         assertEquals(expResult, result, 0.0);

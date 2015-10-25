@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -14,28 +15,27 @@ import java.util.Objects;
  */
 public class InventoryList implements Serializable{
     
-    //this need to be an array!!
-    private String itemsCurrent;
-    private String itemsNeeded;
+    public String itemsCurrent [];
+    private String itemsNeeded [];
     private int currentSurvivalPoints;
     private int neededSurvivalPoints;
 
     public InventoryList() {
     }
 
-    public String getItemsCurrent() {
+     public String[] getItemsCurrent() {
         return itemsCurrent;
     }
 
-    public void setItemsCurrent(String itemsCurrent) {
+    public void setItemsCurrent(String[] itemsCurrent) {
         this.itemsCurrent = itemsCurrent;
     }
 
-    public String getItemsNeeded() {
+    public String[] getItemsNeeded() {
         return itemsNeeded;
     }
 
-    public void setItemsNeeded(String itemsNeeded) {
+    public void setItemsNeeded(String[] itemsNeeded) {
         this.itemsNeeded = itemsNeeded;
     }
 
@@ -54,14 +54,14 @@ public class InventoryList implements Serializable{
     public void setNeededSurvivalPoints(int neededSurvivalPoints) {
         this.neededSurvivalPoints = neededSurvivalPoints;
     }
-
+    
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.itemsCurrent);
-        hash = 17 * hash + Objects.hashCode(this.itemsNeeded);
-        hash = 17 * hash + this.currentSurvivalPoints;
-        hash = 17 * hash + this.neededSurvivalPoints;
+        int hash = 5;
+        hash = 53 * hash + Arrays.deepHashCode(this.itemsCurrent);
+        hash = 53 * hash + Arrays.deepHashCode(this.itemsNeeded);
+        hash = 53 * hash + this.currentSurvivalPoints;
+        hash = 53 * hash + this.neededSurvivalPoints;
         return hash;
     }
 
@@ -74,10 +74,10 @@ public class InventoryList implements Serializable{
             return false;
         }
         final InventoryList other = (InventoryList) obj;
-        if (!Objects.equals(this.itemsCurrent, other.itemsCurrent)) {
+        if (!Arrays.deepEquals(this.itemsCurrent, other.itemsCurrent)) {
             return false;
         }
-        if (!Objects.equals(this.itemsNeeded, other.itemsNeeded)) {
+        if (!Arrays.deepEquals(this.itemsNeeded, other.itemsNeeded)) {
             return false;
         }
         if (this.currentSurvivalPoints != other.currentSurvivalPoints) {
@@ -93,10 +93,11 @@ public class InventoryList implements Serializable{
     public String toString() {
         return "InventoryList{" + "itemsCurrent=" + itemsCurrent + ", itemsNeeded=" + itemsNeeded + ", currentSurvivalPoints=" + currentSurvivalPoints + ", neededSurvivalPoints=" + neededSurvivalPoints + '}';
     }
-    
+  
     ////////////////////////////////////
     //METHODS
     ////////////////////////////////////
-    
+
+   
     
 }
