@@ -57,9 +57,9 @@ public class MainMenuView {
 
     }
     
-    public void doACtion(char input) {
+    public void doAction(char input) {
         
-         switch(input) {
+        switch(input) {
             case 'N' :
                 startNewGame();
                 break;
@@ -67,8 +67,8 @@ public class MainMenuView {
                 loadGame();
                 break;
             case 'H' :
-                 HelpMenuView helpMenu = new HelpMenuView();
-                 helpMenu.displayHelpMenu();
+                HelpMenuView helpMenu = new HelpMenuView();
+                helpMenu.displayHelpMenu();
                 break;
             case 'E' :
                 exitGame();
@@ -81,7 +81,6 @@ public class MainMenuView {
 
     private void startNewGame() {
       System.out.println("NOT IMPLEMENTED YET");
-
     }
 
     private void loadGame() {

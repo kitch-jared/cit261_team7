@@ -59,7 +59,7 @@ public class HelpMenuView {
 
     }
     
-    public void doACtion(char input) {
+    public void doAction(char input) {
         
          switch(input) {
             case 'G' :
