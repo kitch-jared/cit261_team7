@@ -39,7 +39,7 @@ public class MainMenuView {
             input = in.nextLine();
             
             if(input.length() < 1){
-                System.out.println("Pleses select an option");
+                System.out.println("Please select an option");
                 displayMenu();
             } else {
             
