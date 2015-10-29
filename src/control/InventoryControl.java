@@ -5,8 +5,11 @@
  */
 package control;
 
+import model.CampingAisles;
 import model.Deliveries;
 import model.Game;
+import model.InventoryList;
+import model.MegaAisles;
 
 /**
  *
@@ -83,6 +86,44 @@ public class InventoryControl {
         int remainingSurvivalPoints = neededSurvivalPoints - currentSurvivalPoints;
         return remainingSurvivalPoints;
     }
-
     
+    
+
+    // Function to add item to inventory
+    
+    /**
+     *
+     * @param item
+     * @param itemsCurrent
+     * @param quantity
+     * @param quantity
+     * @return
+     */
+        
+    public String addItem(String item, InventoryList itemsCurrent, int quantity){
+    
+          // some how we've got get the different corrdinant locations and assign 
+//        //them names to display 
+//        
+//        // For now I am just hard coding megaStore in
+//        location = "megaStore";
+//        
+//        // check if they are in the house or store
+//        if ("house".equals(location)){
+//            // check which room they are in
+//            if ("bedroom".equals(location)){
+//                //get items from that room
+//                item = "clothes";
+//                int quantity = 2; 
+//            }            
+//        } else {
+//            //
+//            
+//        }
+        
+        // add item to inventory list
+        itemsCurrent = itemsCurrent + item; 
+        
+        return null; 
+    }
 }

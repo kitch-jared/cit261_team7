@@ -5,6 +5,7 @@
  */
 package hurricane_game;
 
+import static java.lang.System.in;
 import model.CampingAisles;
 import model.CampingStore;
 import model.Deliveries;
@@ -16,6 +17,8 @@ import model.Item;
 import model.Location;
 import model.MainMap;
 import model.Player;
+import view.MainMenuView;
+import view.WelcomeView;
 
 
 /**
@@ -24,23 +27,55 @@ import model.Player;
  */
 public class Hurricane_game {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-      Player playerOne = new Player(); 
-      
-      // This is just a test to see if the Player function works
-      playerOne.setName("Fred Flintstone");
-      
-      String playerInfo = playerOne. toString();
-      System.out.println(playerInfo);
-      
-      MainMap mainMap = new MainMap();
-        mainMap.initialize();
+//        
+//        Player player = new Player();
+//        
+//        WelcomeView welcomeView = new WelcomeView();
+//        welcomeView.displayBanner();
+//        
+//        player.setName(welcomeView.getPlayerName());
+//        
+//        welcomeView.displayPlayerNameBanner(player);
         
-        System.out.println(mainMap.toString());
-      
+         MainMenuView mainView = new MainMenuView();
+        
+        char in = mainView.getInput();
+        
+        System.out.println("YOU ENTERED " + in);
+
+        }
+        
+        
+        
+        
+        
+        
+        
     }
     
-}
+    
+    
+    
+    
+    
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String[] args) {
+//      Player playerOne = new Player(); 
+//      
+//      // This is just a test to see if the Player function works
+//      playerOne.setName("Fred Flintstone");
+//      
+//      String playerInfo = playerOne. toString();
+//      System.out.println(playerInfo);
+//      
+//      MainMap mainMap = new MainMap();
+//        mainMap.initialize();
+//        
+//        System.out.println(mainMap.toString());
+//      
+//    }
+    
+
