@@ -67,7 +67,8 @@ public class MainMenuView {
                 loadGame();
                 break;
             case 'H' :
-                showHelpMenu();
+                 HelpMenuView helpMenu = new HelpMenuView();
+                 helpMenu.displayHelpMenu();
                 break;
             case 'E' :
                 exitGame();
