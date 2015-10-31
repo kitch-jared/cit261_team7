@@ -21,13 +21,13 @@ public class WelcomeView {
     public void displayBanner(){
         
         System.out.println("*********************************");
-        System.out.println("Welcome to the City.");
-        System.out.println("You wake up in a hotel room feeling lost and confused.");
-        System.out.println("You don't remember how you got here or why you");
-        System.out.println("are even here. Suddenly, something slams into the hotel room door.");
-        System.out.println("After a short time, you hear scratching against the door.");
-        System.out.println("You pick up the lamp on the nightstand and approach the door.");
-        System.out.println("");
+        System.out.println("The tropical storm in the news has just been upgraded to Hurricane Patty.");
+        System.out.println("It is expected to reach your city in 72 hours, and");
+        System.out.println("you need to make sure you have enough food and supplies");
+        System.out.println("to make it through and after the hurricane.");
+        System.out.println("See what you have at home, and then proceed to the stores");
+        System.out.println("to purchase what you need.");
+        System.out.println("Remember, you are in a race against time.");
         System.out.println("Good luck!");
         System.out.println("************************************");
         
