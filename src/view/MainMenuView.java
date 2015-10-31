@@ -67,8 +67,7 @@ public class MainMenuView {
                 loadGame();
                 break;
             case 'H' :
-                HelpMenuView helpMenu = new HelpMenuView();
-                helpMenu.displayHelpMenu();
+                showHelpMenu();
                 break;
             case 'E' :
                 exitGame();
@@ -88,7 +87,8 @@ public class MainMenuView {
     }
 
     private void showHelpMenu() {
-      System.out.println("NOT IMPLEMENTED YET");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenu();
     }
 
     private void exitGame() {
