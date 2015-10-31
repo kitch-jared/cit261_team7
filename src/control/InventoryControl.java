@@ -122,7 +122,7 @@ public class InventoryControl {
 //        }
         
         // add item to inventory list
-        itemsCurrent = itemsCurrent + item; 
+//        itemsCurrent = itemsCurrent + item; 
         
         return null; 
     }
