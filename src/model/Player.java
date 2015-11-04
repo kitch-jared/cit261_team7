@@ -20,6 +20,7 @@ public class Player implements Serializable{
     private List<Item> inventory;
     private double money;
     
+    
     public Player() {
         inventory = new ArrayList<>();
     }
