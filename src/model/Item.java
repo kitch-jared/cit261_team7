@@ -18,36 +18,36 @@ import java.util.Objects;
 
 public class Item implements Serializable{
     
-    private String name [];
-    private int survivalPoints [];
-    private double itemCost [];
+    private String name;
+    private int survivalPoints;
+    private double itemCost;
     private String categoryName;
 
     public Item() {
     }
 
 
-    public String[] getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(String[] name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int[] getSurvivalPoints() {
+    public int getSurvivalPoints() {
         return survivalPoints;
     }
 
-    public void setSurvivalPoints(int[] survivalPoints) {
+    public void setSurvivalPoints(int survivalPoints) {
         this.survivalPoints = survivalPoints;
     }
 
-    public double[] getItemCost() {
+    public double getItemCost() {
         return itemCost;
     }
 
-    public void setItemCost(double[] itemCost) {
+    public void setItemCost(double itemCost) {
         this.itemCost = itemCost;
     }
 
@@ -62,9 +62,6 @@ public class Item implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Arrays.deepHashCode(this.name);
-        hash = 59 * hash + Arrays.hashCode(this.survivalPoints);
-        hash = 59 * hash + Arrays.hashCode(this.itemCost);
         hash = 59 * hash + Objects.hashCode(this.categoryName);
         return hash;
     }
@@ -78,13 +75,7 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (!Arrays.deepEquals(this.name, other.name)) {
-            return false;
-        }
-        if (!Arrays.equals(this.survivalPoints, other.survivalPoints)) {
-            return false;
-        }
-        if (!Arrays.equals(this.itemCost, other.itemCost)) {
+        if (this.itemCost != other.itemCost) {
             return false;
         }
         if (!Objects.equals(this.categoryName, other.categoryName)) {

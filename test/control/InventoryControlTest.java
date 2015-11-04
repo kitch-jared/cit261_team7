@@ -5,6 +5,9 @@
  */
 package control;
 
+import java.util.ArrayList;
+import model.Item;
+import model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -119,4 +122,35 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
+    
+    @Test
+    public void testPurchaseItems() {
+        System.out.println("TESTING PURCHASE ITEMS");
+        
+        Player p = new Player();
+        Item i = new Item();
+        
+        i.setName("Gum");
+        i.setItemCost(1.25);
+        
+        InventoryControl ic = new InventoryControl();
+        
+        boolean result = ic.purchaseItems(p, i, 1);
+        assertFalse(result);
+        assertEquals(false, result);
+        
+        p.setMoney(1.25);
+        result = ic.purchaseItems(p, i, 1);
+        assertTrue(result);
+        assertEquals(0, p.getMoney(), 0);
+        
+        p = new Player();
+        p.setMoney(10);
+        
+        result = ic.purchaseItems(p, i, 2);
+        assertTrue(result);
+        assertEquals(7.50, p.getMoney(), 0);
+        assertEquals(2, p.getInventory().size());
+    }
+    
 }

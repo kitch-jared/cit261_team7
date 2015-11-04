@@ -9,7 +9,9 @@ import model.CampingAisles;
 import model.Deliveries;
 import model.Game;
 import model.InventoryList;
+import model.Item;
 import model.MegaAisles;
+import model.Player;
 
 /**
  *
@@ -126,4 +128,36 @@ public class InventoryControl {
         
         return null; 
     }
+    
+    
+    public boolean purchaseItems(Player p, Item i, int quantity) {
+        
+        //Calculate total cost
+        double totalCost = quantity * i.getItemCost();
+        
+        if(p.getMoney() < totalCost) {
+            return false;
+        }
+        
+        double newMoney = p.getMoney() - totalCost;
+        p.setMoney(newMoney);
+        
+        int count = 0;
+        
+        while(count < quantity) {
+            Item newItem = new Item();
+            newItem.setCategoryName(i.getCategoryName());
+            newItem.setItemCost(i.getItemCost());
+            newItem.setName(i.getName());
+            newItem.setSurvivalPoints(i.getSurvivalPoints());
+            
+            p.getInventory().add(newItem);
+            count = count + 1;
+        }
+        
+        return true;
+    }
+    
+    
+    
 }
