@@ -102,8 +102,8 @@ public class InventoryControl {
         
     public String addItem(String item, InventoryList itemsCurrent, int quantity){
     
-          // some how we've got get the different corrdinant locations and assign 
-//        //them names to display 
+          // some how we've got get the location and based on the location run different
+          // Checks such as did the correct amount of money get subtracted from the total money
 //        
 //        // For now I am just hard coding megaStore in
 //        location = "megaStore";
