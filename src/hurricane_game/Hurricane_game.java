@@ -39,6 +39,7 @@ public class Hurricane_game {
 //        welcomeView.displayPlayerNameBanner(player);
         
          MainMenuView mainView = new MainMenuView();
+         mainView.displayMenu();
         
         char in = mainView.getInput();
         
