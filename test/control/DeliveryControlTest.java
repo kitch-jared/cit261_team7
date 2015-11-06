@@ -49,12 +49,13 @@ public class DeliveryControlTest {
     public void testcheckDeliveries() {
         System.out.println("checkDeliveries");
         boolean makeDeliveries = true;
-        int numberOfDeliveries = 10;
+        int d = 1;
+        int numberOfDeliveries = 9;
         DeliveryControl instance = new DeliveryControl();
         int expResult = 9;
-        int result = instance.calcNewTimeAfterDelivery(makeDeliveries, numberOfDeliveries);
+        int result = instance.checkDeliveries(makeDeliveries, numberOfDeliveries);
         assertEquals(expResult, result);
-    }
+   }
 }
 
 
