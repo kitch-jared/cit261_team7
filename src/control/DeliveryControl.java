@@ -11,21 +11,26 @@ package control;
  */
 public class DeliveryControl {
     
-    public void checkDeliveries(boolean makeDeliveries, int numberOfDeliveries){
+    public int checkDeliveries(boolean makeDeliveries, int numberOfDeliveries) {
     
+        int returnValue;
+        
         if (!makeDeliveries) {
-                System.out.println("No Deliveries");
+            
+            returnValue = 0;
         }
         
 	else {
-            if (makeDeliveries) {
-		for (int d = 10; d <= 10; d--) // need to rewrite this code; not working
-                    numberOfDeliveries = 10 - d;
+            for (int d = 10; d <= 10; d--) // need to rewrite this code; not working
+                
+                numberOfDeliveries = 10 - d;
+            
+            returnValue = numberOfDeliveries;
 
-                System.out.println("Yes, you have " + numberOfDeliveries); 
             }
+        return returnValue;
         }
-    }
+    
     
     public int calcNewTimeAfterDelivery(boolean makeDeliveries, int timeRemaining){
         
@@ -45,7 +50,7 @@ public class DeliveryControl {
         }
 	
 	return deliveryTime;
-
+    }
 
     }
-}
+
