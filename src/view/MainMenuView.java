@@ -6,7 +6,9 @@
 package view;
 
 import java.util.Scanner;
-
+//import control.GameControl;
+//import model.Player;
+//import view.GameMenuView;
 /**
  *
  * @author maloriegomm
@@ -80,9 +82,11 @@ public class MainMenuView {
     
     }
 
-    private void startNewGame() {
-      System.out.println("NOT IMPLEMENTED YET");
-      displayMenu();
+    private void startNewGame() { // working on this function
+      
+      /*GameMenuView gameMenu = new GameMenuView();
+      gameMenu.displayMenu;*/
+      
     }
 
     private void loadGame() {
