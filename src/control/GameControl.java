@@ -5,10 +5,36 @@
  */
 package control;
 
+import model.Player;
+
 /**
  *
  * @author maloriegomm
  */
 public class GameControl {
+    
+    public void startNewGame() {
+        
+    }
+    
+    public void initializeMap() {
+    
+    }
+    
+    public void saveGame() {
+    
+    }
+    
+    public void retrieveGame() {
+    
+    }
+    
+    public Player createNewPlayer() {
+        
+        Player name = new Player();
+        
+        return name;
+    
+    }
     
 }
