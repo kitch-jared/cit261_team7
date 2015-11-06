@@ -23,7 +23,7 @@ public class DeliveryControl {
 	else {
             for (int d = 10; d <= 10; d--) // need to rewrite this code; not working
                 
-                numberOfDeliveries = 10 - d;
+                numberOfDeliveries = 10 - d--;
             
             returnValue = numberOfDeliveries;
 
