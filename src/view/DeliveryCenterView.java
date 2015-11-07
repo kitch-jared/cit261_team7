@@ -20,12 +20,10 @@ public class DeliveryCenterView {
     public void displayDeliveryOptions() {
         
         System.out.println("Please select an option:");
-        System.out.println("G - What is the goal of the game?");
-        System.out.println("V - view inventory and resources");
-        System.out.println("M - How to move locations");
-        System.out.println("A - How to make money");
-        System.out.println("B - How to buy supplies");
-        System.out.println("X - Close Help Menu");
+        System.out.println("C - Choose a Delivery");
+        System.out.println("M - Make a Delivery");
+        System.out.println("V - View Deliveries");
+        System.out.println("X - Return to Game Menu");
         
     }
     
@@ -37,17 +35,17 @@ public class DeliveryCenterView {
         char rtn = 0;
         
         while(input.length() < 1){
-            displayHelpMenu();
+            displayDeliveryOptions();
             input = in.nextLine();
             
             if(input.length() < 1){
                 System.out.println("Pleses select an option");
-                displayHelpMenu();
+                displayDeliveryOptions();
             } else {
             
                 rtn = input.toUpperCase().charAt(0);
 
-                 if(rtn != 'G' && rtn != 'V' && rtn != 'M' && rtn != 'A' && rtn != 'B' && rtn != 'X') {
+                 if(rtn != 'C' && rtn != 'M' && rtn != 'V' && rtn != 'X') {
                     System.out.println("Please select a valid input.");
                     input = "";
                 }
@@ -62,23 +60,17 @@ public class DeliveryCenterView {
     public void doAction(char input) {
         
          switch(input) {
-            case 'G' :
-                GameGoal();
-                break;
-            case 'V' :
-                ViewInventory();
+            case 'C' :
+                ChooseDelivery();
                 break;
             case 'M' :
-                MoveLocations();
+                MakeDelivery();
                 break;
-            case 'A' :
-                MakeMoney();
-                break;
-            case 'B' :
-                BuySupplies();
+            case 'V' :
+                ViewDeliveries();
                 break;
             case 'X' :
-                ExitHelpMenu();
+                ReturnGameMenu();
                 break;
             default:
                 System.out.println("ERROR ON INPUT");
@@ -87,28 +79,19 @@ public class DeliveryCenterView {
     }
 
 
-    private void GameGoal() {
+    private void ChooseDelivery() {
         System.out.println("NOT IMPLEMENTED YET"); 
     }
     
-    private void ViewInventory() {
+    private void MakeDelivery() {
         System.out.println("NOT IMPLEMENTED YET"); 
     }
 
-    private void MoveLocations() {
+    private void ViewDeliveries() {
         System.out.println("NOT IMPLEMENTED YET");  
     }
 
-    private void MakeMoney() {
+    private void ReturnGameMenu() {
         System.out.println("NOT IMPLEMENTED YET"); 
-    }
-
-    private void BuySupplies() {
-        System.out.println("NOT IMPLEMENTED YET");   
-    }
-
-    private void ExitHelpMenu() {
-        System.out.println("NOT IMPLEMENTED YET");
-    }
-    
+    }   
 }
