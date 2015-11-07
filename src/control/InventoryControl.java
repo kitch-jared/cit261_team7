@@ -20,18 +20,20 @@ import model.Player;
 public class InventoryControl {
     
     // function for money earned
-    public double calcAddMoneyEarned(double budget, double deliveryMoney){
+    public Double calcAddMoneyEarned(Player p, Deliveries d){
     
-            if (budget < 0){
-                return -1;
+            if (p.getMoney() < 0){
+                return -1.0;
             }
-            if (deliveryMoney < 0){
-                return -1;
+            if (d.getDeliveryMoney() < 0){
+                return -1.0;
             }
             
-            budget = budget + deliveryMoney;
-                return budget;
-        }
+            double newMoney = p.getMoney() + d.getDeliveryMoney();
+            p.setMoney(newMoney);
+            
+            return newMoney;
+    }
     
     
     //function to calculate money spent

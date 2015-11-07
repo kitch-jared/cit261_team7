@@ -115,6 +115,10 @@ public class Deliveries implements Serializable {
         }
     
     // Need to calculate remaining time  
+
+    public void setDeliveyMoney(double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  }
             
         
