@@ -17,7 +17,7 @@ public class HelpMenuView {
         
     }
     
-    public void displayHelpMenu() {
+    public void display() {
         
         System.out.println("Please select an option:");
         System.out.println("G - What is the goal of the game?");
@@ -37,12 +37,12 @@ public class HelpMenuView {
         char rtn = 0;
         
         while(input.length() < 1){
-            displayHelpMenu();
+            display();
             input = in.nextLine();
             
             if(input.length() < 1){
                 System.out.println("Pleses select an option");
-                displayHelpMenu();
+                display();
             } else {
             
                 rtn = input.toUpperCase().charAt(0);

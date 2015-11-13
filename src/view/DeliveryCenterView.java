@@ -17,7 +17,10 @@ public class DeliveryCenterView {
         
     }
     
-    public void displayDeliveryOptions() {
+    /**
+     *
+     */
+    public void display() {
         
         System.out.println("Please select an option:");
         System.out.println("C - Choose a Delivery");
@@ -35,12 +38,12 @@ public class DeliveryCenterView {
         char rtn = 0;
         
         while(input.length() < 1){
-            displayDeliveryOptions();
+            display();
             input = in.nextLine();
             
             if(input.length() < 1){
-                System.out.println("Pleses select an option");
-                displayDeliveryOptions();
+                System.out.println("Please select an option");
+                display();
             } else {
             
                 rtn = input.toUpperCase().charAt(0);
