@@ -11,55 +11,24 @@ import java.util.Scanner;
  *
  * @author maloriegomm
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
-   public HelpMenuView() {
-        
+    public HelpMenuView() {
+        super("G - What is the goal of the game?\n"
+                + "V - view inventory and resources\n"
+                + "M - How to move locations\n"
+                + "A - How to make money\n"
+                + "B - How to buy supplies\n"
+                + "X - Close Help Menu\n");
     }
-    
-    public void display() {
-        
-        System.out.println("Please select an option:");
-        System.out.println("G - What is the goal of the game?");
-        System.out.println("V - view inventory and resources");
-        System.out.println("M - How to move locations");
-        System.out.println("A - How to make money");
-        System.out.println("B - How to buy supplies");
-        System.out.println("X - Close Help Menu");
-        
-    }
-    
-    public char getInput() {
-        
-        Scanner in = new Scanner(System.in);
-        
-        String input = "";
-        char rtn = 0;
-        
-        while(input.length() < 1){
-            display();
-            input = in.nextLine();
-            
-            if(input.length() < 1){
-                System.out.println("Pleses select an option");
-                display();
-            } else {
-            
-                rtn = input.toUpperCase().charAt(0);
 
-                 if(rtn != 'G' && rtn != 'V' && rtn != 'M' && rtn != 'A' && rtn != 'B' && rtn != 'X') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            
-            }
-        
-        }
-     return rtn;
-
-    }
-    
-    public void doAction(char input) {
+    /**
+     * This just calls a method based on the input
+     *
+     * @param input
+     */
+    @Override
+     public boolean doAction(char input) {
         
          switch(input) {
             case 'G' :
@@ -83,12 +52,12 @@ public class HelpMenuView {
             default:
                 System.out.println("ERROR ON INPUT");
         }
-    
+          return true;
     }
 
-
-    private void GameGoal() {
-        System.out.println("NOT IMPLEMENTED YET"); 
+    
+     private void GameGoal() {
+        System.out.println("The goal of the game is to..."); 
     }
     
     private void ViewInventory() {
@@ -110,4 +79,35 @@ public class HelpMenuView {
     private void ExitHelpMenu() {
         System.out.println("NOT IMPLEMENTED YET");
     }
+    
+  
+//    public char getInput() {
+//        
+//        Scanner in = new Scanner(System.in);
+//        
+//        String input = "";
+//        char rtn = 0;
+//        
+//        while(input.length() < 1){
+//            display();
+//            input = in.nextLine();
+//            
+//            if(input.length() < 1){
+//                System.out.println("Pleses select an option");
+//                display();
+//            } else {
+//            
+//                rtn = input.toUpperCase().charAt(0);
+//
+//                 if(rtn != 'G' && rtn != 'V' && rtn != 'M' && rtn != 'A' && rtn != 'B' && rtn != 'X') {
+//                    System.out.println("Please select a valid input.");
+//                    input = "";
+//                }
+//            
+//            }
+//        
+//        }
+//     return rtn;
+//
+//    }
 }

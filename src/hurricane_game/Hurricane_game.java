@@ -41,9 +41,9 @@ public class Hurricane_game {
          MainMenuView mainView = new MainMenuView();
          mainView.display();
         
-        char in = mainView.getInput();
-        
-        System.out.println("YOU ENTERED " + in);
+//        char in = mainView.getInput();
+//        
+//        System.out.println("YOU ENTERED " + in);
 
         }
         
