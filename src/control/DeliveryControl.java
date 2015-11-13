@@ -39,7 +39,7 @@ public class DeliveryControl {
         }
         else {
             if (makeDeliveries) {
-                int deliveryTime = timeRemaining - 2;
+                int deliveryTime = timeRemaining - 2; // deduct 2 hours from game every time a delivery is 
                 return deliveryTime;
             }
         }
