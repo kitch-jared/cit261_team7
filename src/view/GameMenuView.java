@@ -12,8 +12,21 @@ import java.util.Scanner;
  *
  * @author Maxine
  */
-public class GameMenuView {
+public class GameMenuView extends View{
     
+     public GameMenuView() {
+        super("M - Map of town\n"
+              + "S - Supplies list\n"
+              + "I - Inventory list\n"
+              + "L - Move to a new location\n"
+              + "Y - View deliveries\n"
+              + "V - View what location has\n"
+              + "A - Money Accounts\n"
+              + "P - Survival Points Earned\n"
+              + "T - Time before hurricane\n"
+              + "A - Money Accounts\n"
+              + "P - Survival Points Earned\n");
+    }
     public void display() {
         
         System.out.println("Please select an option:");

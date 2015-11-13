@@ -10,7 +10,7 @@ import model.Deliveries;
 import model.Game;
 import model.InventoryList;
 import model.Item;
-import model.MegaAisles;
+import model.StoreAisles;
 import model.Player;
 
 /**
