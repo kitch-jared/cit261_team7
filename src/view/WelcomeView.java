@@ -22,12 +22,13 @@ public class WelcomeView {
         
         System.out.println("*********************************");
         System.out.println("The tropical storm in the news has just been upgraded to Hurricane Patty.");
-        System.out.println("It is expected to reach your city in 72 hours, and");
+        System.out.println("It is expected to reach your city in 72 hours.");
         System.out.println("you need to make sure you have enough food and supplies");
-        System.out.println("to make it through and after the hurricane.");
+        System.out.println("to survive the hurricane and it's after math.");
         System.out.println("See what you have at home, and then proceed to the stores");
         System.out.println("to purchase what you need.");
-        System.out.println("Remember, you are in a race against time.");
+        System.out.println("Remember, you are in a race against time. It will");
+        System.out.println("It will cost you half an hour of your time everytime you move location, so use your time wisely!");
         System.out.println("Good luck!");
         System.out.println("************************************");
         
