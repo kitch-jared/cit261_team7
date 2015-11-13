@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class GameMenuView {
     
-    public void displayMenu() {
+    public void display() {
         
         System.out.println("Please select an option:");
         System.out.println("M - Map of town");
@@ -63,7 +63,8 @@ public class GameMenuView {
      return rtn;
     }
     
-    public void gameOption(char input) {
+    
+    public boolean doAction(char input) {
     
         switch (input) {
             case 'M':
@@ -99,9 +100,10 @@ public class GameMenuView {
                 helpTips();
                 break;
             case 'X':
-                mainMenu();
-                break;
-        }
+                return false;
+            }
+            return true;
+        
         }
 
     private void townMap() {
