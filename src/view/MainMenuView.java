@@ -64,6 +64,7 @@ public class MainMenuView extends View {
 
     }
     
+    @Override
     public boolean doAction(char input) {
         
         switch(input) {
