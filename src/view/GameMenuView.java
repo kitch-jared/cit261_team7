@@ -24,56 +24,10 @@ public class GameMenuView extends View{
               + "A - Money Accounts\n"
               + "P - Survival Points Earned\n"
               + "T - Time before hurricane\n"
-              + "A - Money Accounts\n"
-              + "P - Survival Points Earned\n");
-    }
-    public void display() {
-        
-        System.out.println("Please select an option:");
-        System.out.println("M - Map of town");
-        System.out.println("S - Supplies list");
-        System.out.println("I - Inventory list");
-        System.out.println("L - Move to a new location");
-        System.out.println("D - Deliver supplies");
-        System.out.println("Y - View deliveries");
-        System.out.println("V - View what location has");
-        System.out.println("A - Money Accounts");
-        System.out.println("P - Survival Points Earned");
-        System.out.println("T - Time before hurricane");
-        System.out.println("H - Help");
-        System.out.println("X - Main Menu");
-        
-    }
-    
-    public char getInput() {
-        
-        Scanner in = new Scanner(System.in);
-        
-        String input = "";
-        char rtn = 0;
-        
-        while(input.length() < 1){
-            displayGameMenu();
-            input = in.nextLine();
-            
-            if(input.length() < 1) {
-                System.out.println("Pleses select an option");
-                displayGameMenu();
-            } else {
-            
-                rtn = input.toUpperCase().charAt(0);
-
-                 if(rtn != 'M' && rtn != 'S' && rtn != 'I' && rtn != 'L' && rtn != 'D'
-                         && rtn != 'Y' && rtn != 'V' && rtn != 'A' && rtn != 'P' && 
-                         rtn != 'T' && rtn != 'H' && rtn != 'X') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            
-            }
-        
-        }
-     return rtn;
+              + "H - Help Menu\n"
+              + "MM - Main Menu\n"
+                // might not need the exit menu option
+              + "X - Exit Game Menu\n");
     }
     
     
@@ -82,9 +36,6 @@ public class GameMenuView extends View{
         switch (input) {
             case 'M':
                 townMap();
-                break;
-            case 'S':
-                suppliesList();
                 break;
             case 'I':
                 inventoryList();
