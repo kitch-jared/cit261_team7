@@ -82,7 +82,6 @@ public class MainMenuView extends View {
                 return false;
             default:
                 System.out.println("Please select a valid input.");
-                display();
                 break;
         }
         

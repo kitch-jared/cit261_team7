@@ -18,7 +18,7 @@ public class WelcomeView {
         
     }
     
-    public void display(){
+    public void displayBanner(){
         
         System.out.println("*********************************");
         System.out.println("The tropical storm in the news has just been upgraded to Hurricane Patty.");
@@ -59,6 +59,7 @@ public class WelcomeView {
         System.out.println("Enjoy the Game!");
         System.out.println("************************************");
     }
+
     
     
     
