@@ -13,13 +13,16 @@ import java.util.Scanner;
  *
  * @author maloriegomm
  */
-public class MainMenuView {
+public class MainMenuView extends View {
    
     public MainMenuView() {
         
     }
     
-    public void displayMenu() {
+    /**
+     *
+     */
+    public void display() {
         
         System.out.println("Please select an option:");
         System.out.println("N - Begin new game");
@@ -61,7 +64,7 @@ public class MainMenuView {
 
     }
     
-    public void doAction(char input) {
+    public boolean doAction(char input) {
         
         switch(input) {
             case 'N' :
@@ -74,30 +77,33 @@ public class MainMenuView {
                 showHelpMenu();
                 break;
             case 'E' :
-                exitGame();
-                break;
+                return false;
             default:
-                System.out.println("ERROR ON INPUT");
+                System.out.println("Please select a valid input.");
+                display();
+                break;
         }
+        
+        return true;
     
     }
 
     private void startNewGame() { // working on this function
       
-      /*GameMenuView gameMenu = new GameMenuView();
-      gameMenu.displayMenu;*/
+      GameMenuView gameMenu = new GameMenuView();
+      gameMenu.display();
       
     }
 
     private void loadGame() {
       System.out.println("NOT IMPLEMENTED YET");
-      displayMenu();
+      display();
 
     }
 
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void exitGame() {
