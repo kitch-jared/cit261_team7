@@ -5,62 +5,23 @@
  */
 package view;
 
-import java.util.Scanner;
+import model.Deliveries;
 
 /**
  *
  * @author maloriegomm
  */
-public class DeliveryCenterView {
+public class DeliveryCenterView extends View{
     
     public DeliveryCenterView() {
-        
+        super("C - Choose a Delivery\n"
+                + "M - Make a Delivery\n"
+                + "V - View Deliveries\n"
+                + "X - Return to Game Menu\n");
     }
-    
-    /**
-     *
-     */
-    public void display() {
-        
-        System.out.println("Please select an option:");
-        System.out.println("C - Choose a Delivery");
-        System.out.println("M - Make a Delivery");
-        System.out.println("V - View Deliveries");
-        System.out.println("X - Return to Game Menu");
-        
-    }
-    
-    public char getInput() {
-        
-        Scanner in = new Scanner(System.in);
-        
-        String input = "";
-        char rtn = 0;
-        
-        while(input.length() < 1){
-            display();
-            input = in.nextLine();
-            
-            if(input.length() < 1){
-                System.out.println("Please select an option");
-                display();
-            } else {
-            
-                rtn = input.toUpperCase().charAt(0);
 
-                 if(rtn != 'C' && rtn != 'M' && rtn != 'V' && rtn != 'X') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            
-            }
-        
-        }
-     return rtn;
-
-    }
-    
-    public void doAction(char input) {
+    @Override   
+    public boolean doAction(char input) {
         
          switch(input) {
             case 'C' :
@@ -72,18 +33,23 @@ public class DeliveryCenterView {
             case 'V' :
                 ViewDeliveries();
                 break;
-            case 'X' :
-                ReturnGameMenu();
-                break;
+            case 'X':
+                return false;
             default:
-                System.out.println("ERROR ON INPUT");
-        }
-    
+                System.out.println("Please select a valid input.");
+                break;
+            }
+            return true;
     }
 
 
     private void ChooseDelivery() {
-        System.out.println("NOT IMPLEMENTED YET"); 
+        System.out.println("You Selected 'Choose a Delivery'. /n");
+        System.out.println("Each delivery will take half an hour off your time./n");
+        System.out.println("Which type of delivery would you like to make?");
+        
+        deliveryOptions();
+                
     }
     
     private void MakeDelivery() {
@@ -97,4 +63,22 @@ public class DeliveryCenterView {
     private void ReturnGameMenu() {
         System.out.println("NOT IMPLEMENTED YET"); 
     }   
+
+    public void deliveryOptions() {
+        // create 3 new deliveries instances
+        Deliveries deliveryOne = new Deliveries();
+        deliveryOne.setType("Name Type");
+        
+        Deliveries deliveryTwo = new Deliveries();
+        deliveryTwo.setType("Name Type");
+        
+        Deliveries deliveryThree = new Deliveries();
+        deliveryThree.setType("Name Type");
+        
+        System.out.println("Please select the type of delivery you would like to accept");
+        System.out.println("A - deliveryOne");
+        System.out.println("B - deliveryTwo");
+        System.out.println("C - deliveryThree");
+        System.out.println("X - Cancel");  
+    }
 }

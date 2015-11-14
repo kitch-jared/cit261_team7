@@ -5,12 +5,8 @@
  */
 package control;
 
-import model.CampingAisles;
 import model.Deliveries;
-import model.Game;
-import model.InventoryList;
 import model.Item;
-import model.StoreAisles;
 import model.Player;
 
 /**
@@ -25,11 +21,8 @@ public class InventoryControl {
             if (p.getMoney() < 0){
                 return -1.0;
             }
-            if (d.getDeliveryMoney() < 0){
-                return -1.0;
-            }
             
-            double newMoney = p.getMoney() + d.getDeliveryMoney();
+            double newMoney = p.getMoney() + d.getDELIVERY_MONEY();
             p.setMoney(newMoney);
             
             return newMoney;
@@ -90,46 +83,16 @@ public class InventoryControl {
         int remainingSurvivalPoints = neededSurvivalPoints - currentSurvivalPoints;
         return remainingSurvivalPoints;
     }
-    
-    
 
     // Function to add item to inventory
     
     /**
      *
-     * @param item
-     * @param itemsCurrent
-     * @param quantity
+     * @param p
+     * @param i
      * @param quantity
      * @return
      */
-        
-    public String addItem(String item, InventoryList itemsCurrent, int quantity){
-    
-          // some how we've got get the location and based on the location run different
-          // Checks such as did the correct amount of money get subtracted from the total money
-//        
-//        // For now I am just hard coding megaStore in
-//        location = "megaStore";
-//        
-//        // check if they are in the house or store
-//        if ("house".equals(location)){
-//            // check which room they are in
-//            if ("bedroom".equals(location)){
-//                //get items from that room
-//                item = "clothes";
-//                int quantity = 2; 
-//            }            
-//        } else {
-//            //
-//            
-//        }
-        
-        // add item to inventory list
-//        itemsCurrent = itemsCurrent + item; 
-        
-        return null; 
-    }
     
     
     public boolean purchaseItems(Player p, Item i, int quantity) {

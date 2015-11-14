@@ -48,6 +48,9 @@ public class HelpMenuView extends View{
                 break;
             case 'X':
                 return false;
+            default:
+                System.out.println("Please select a valid input.");
+                break;
             }
             return true;
         }

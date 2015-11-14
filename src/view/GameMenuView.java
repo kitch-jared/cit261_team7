@@ -24,6 +24,7 @@ public class GameMenuView extends View{
               + "A - Money Accounts\n"
               + "P - Survival Points Earned\n"
               + "T - Time before hurricane\n"
+              + "C - Enter Delivery Center\n"
               + "H - Help Menu\n"
               + "X - Exit to Main Menu\n");
     }
@@ -58,8 +59,14 @@ public class GameMenuView extends View{
             case 'H':
                 showHelpMenu();
                 break;
+             case 'C':
+                showDeliveryCenter();
+                break;
             case 'X':
                 return false;
+            default:
+                System.out.println("Please select a valid input.");
+                break;
             }
             return true;
         
@@ -110,6 +117,11 @@ public class GameMenuView extends View{
         helpMenu.display();
     }
     
+     private void showDeliveryCenter() {
+        DeliveryCenterView deliveryCenter = new DeliveryCenterView();
+        deliveryCenter.display();
+    }
+        
     private void displayGameMenu() {
         
     }   

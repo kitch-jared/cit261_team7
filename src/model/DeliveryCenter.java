@@ -16,6 +16,11 @@ public class DeliveryCenter implements Serializable {
     
     private String deliveryType;
     private boolean deliveryStatus;
+    
+//    private boolean makeDeliveries;
+//    private int numberOfDeliveries;
+//    private double deliveryTime;
+//    private double deliveryMoney  
 
     public DeliveryCenter() {
     }
@@ -92,6 +97,26 @@ public class DeliveryCenter implements Serializable {
         /*else {
             System.out.println("No delivery was made.");
         }*/
-    
-    
 }
+    
+    
+     /* Implement methods to determine number of deliveries and calculate new time
+       after delivery is made */
+//    
+//    public boolean hasDeliveries() {
+//        if (makeDeliveries == true) {
+//            System.out.println("Yes, you have deliveries.");
+//        } else {
+//            System.out.println("No deliveries.");
+//        }
+//        return false;
+//        }
+//    
+//    // Need to calculate remaining time  
+//
+//    public void setDeliveyMoney(double d) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+// }
+//    
+

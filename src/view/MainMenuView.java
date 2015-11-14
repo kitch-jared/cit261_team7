@@ -63,8 +63,4 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-
-    private void exitGame() {
-      System.out.println("NOT IMPLEMENTED YET");
-    }
 }

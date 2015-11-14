@@ -33,13 +33,6 @@ public class Hurricane_game {
 //        System.out.println("YOU ENTERED " + in);
 
         }
-        
-        
-        
-        
-        
-        
-        
     }
     
     

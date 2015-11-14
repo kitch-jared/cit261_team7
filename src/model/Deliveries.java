@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -13,57 +14,47 @@ import java.io.Serializable;
  */
 public class Deliveries implements Serializable {
     
-    private boolean makeDeliveries;
-    private int numberOfDeliveries;
-    private double deliveryTime;
-    private double deliveryMoney;
+    // I set the money for every delivery to 10 dollars and the time to half an hour
+    
+    public static final double DELIVERY_MONEY = 10.00;
+    public static final double DELIVERY_TIME = 0.50;
 
+    private String type;
+    private boolean status;
+    
+    
     public Deliveries() {
     }
-    
-    public boolean isMakeDeliveries() {
-        return makeDeliveries;
+
+    public static double getDELIVERY_MONEY() {
+        return DELIVERY_MONEY;
     }
 
-    public void setMakeDeliveries(boolean makeDeliveries) {
-        this.makeDeliveries = makeDeliveries;
+    public static double getDELIVERY_TIME() {
+        return DELIVERY_TIME;
     }
 
-    public int getNumberOfDeliveries() {
-        return numberOfDeliveries;
+    public String getType() {
+        return type;
     }
 
-    public void setNumberOfDeliveries(int numberOfDeliveries) {
-        this.numberOfDeliveries = numberOfDeliveries;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setDeliveryTime(int deliveryTime) {
-        this.deliveryTime = deliveryTime;
+    public boolean isStatus() {
+        return status;
     }
 
-    public double getDeliveryTime() {
-        return deliveryTime;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
-    public void setDeliveryTime(double deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
-
-    public double getDeliveryMoney() {
-        return deliveryMoney;
-    }
-
-    public void setDeliveryMoney(double deliveryMoney) {
-        this.deliveryMoney = deliveryMoney;
-    }
-
-    @Override
+     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 73 * hash + (this.makeDeliveries ? 1 : 0);
-        hash = 73 * hash + this.numberOfDeliveries;
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.deliveryTime) ^ (Double.doubleToLongBits(this.deliveryTime) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.deliveryMoney) ^ (Double.doubleToLongBits(this.deliveryMoney) >>> 32));
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.type);
+        hash = 67 * hash + (this.status ? 1 : 0);
         return hash;
     }
 
@@ -76,50 +67,30 @@ public class Deliveries implements Serializable {
             return false;
         }
         final Deliveries other = (Deliveries) obj;
-        if (this.makeDeliveries != other.makeDeliveries) {
+        if (!Objects.equals(this.type, other.type)) {
             return false;
         }
-        if (this.numberOfDeliveries != other.numberOfDeliveries) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.deliveryTime) != Double.doubleToLongBits(other.deliveryTime)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.deliveryMoney) != Double.doubleToLongBits(other.deliveryMoney)) {
+        if (this.status != other.status) {
             return false;
         }
         return true;
     }
-
+    
     @Override
     public String toString() {
-        return "Deliveries{" + "makeDeliveries=" + makeDeliveries + ", numberOfDeliveries=" + numberOfDeliveries + ", deliveryTime=" + deliveryTime + ", deliveryMoney=" + deliveryMoney + '}';
+        return "Deliveries{" + "type=" + type + ", status=" + status + '}';
     }
+}
 
-    
+   
     
     ///////////////////////////////////////////////
     // METHODS
     //////////////////////////////////////////////
-    
-    /* Implement methods to determine number of deliveries and calculate new time
-       after delivery is made */
-    
-    public boolean hasDeliveries() {
-        if (makeDeliveries == true) {
-            System.out.println("Yes, you have deliveries.");
-        } else {
-            System.out.println("No deliveries.");
-        }
-        return false;
-        }
-    
-    // Need to calculate remaining time  
 
-    public void setDeliveyMoney(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
- }
+   
+    
+   
             
         
 
