@@ -23,47 +23,6 @@ public class MainMenuView extends View {
      *
      * @param input
      */
-//    public void display() {
-//        
-//        System.out.println("Please select an option:");
-//        System.out.println("N - Begin new game");
-//        System.out.println("L - Load saved game");
-//        System.out.println("H - View help menu");
-//        System.out.println("E - Exit game");
-//        char in = getInput();
-//        doAction(in);
-//        
-//    }
-//    
-//    public char getInput() {
-//        
-//        Scanner in = new Scanner(System.in);
-//        
-//        String input = "";
-//        char rtn = 0;
-//        
-//        while(input.length() < 1){
-////            displayMenu();
-//            input = in.nextLine();
-//            
-//            if(input.length() < 1){
-//                System.out.println("Please select an option");
-////                displayMenu();
-//            } else {
-//            
-//                rtn = input.toUpperCase().charAt(0);
-//
-//                 if(rtn != 'N' && rtn != 'L' && rtn != 'H' && rtn != 'E') {
-//                    System.out.println("Please select a valid input.");
-//                    input = "";
-//                }
-//            
-//            }
-//        
-//        }
-//     return rtn;
-//
-//    }
     
     @Override
     public boolean doAction(char input) {
@@ -90,7 +49,6 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() { // working on this function
-      
       GameMenuView gameMenu = new GameMenuView();
       gameMenu.display();
       

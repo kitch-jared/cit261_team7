@@ -19,15 +19,13 @@ public class GameMenuView extends View{
               + "S - Supplies list\n"
               + "I - Inventory list\n"
               + "L - Move to a new location\n"
-              + "Y - View deliveries\n"
+              + "D - View deliveries\n"
               + "V - View what location has\n"
               + "A - Money Accounts\n"
               + "P - Survival Points Earned\n"
               + "T - Time before hurricane\n"
               + "H - Help Menu\n"
-              + "MM - Main Menu\n"
-                // might not need the exit menu option
-              + "X - Exit Game Menu\n");
+              + "X - Exit to Main Menu\n");
     }
     
     
@@ -41,12 +39,9 @@ public class GameMenuView extends View{
                 inventoryList();
                 break;
             case 'L':
-                moveToANewLocation();
+                moveToNewLocation();
                 break;
             case 'D':
-                deliverSupplies();
-                break;
-            case 'Y':
                 viewDeliveries();
                 break;
             case 'V':
@@ -61,7 +56,7 @@ public class GameMenuView extends View{
                 timeRemaining();
                 break;
             case 'H':
-                helpTips();
+                showHelpMenu();
                 break;
             case 'X':
                 return false;
@@ -82,7 +77,7 @@ public class GameMenuView extends View{
         System.out.println("NOT IMPLEMENTED YET"); 
     }
 
-    private void moveToANewLocation() {
+    private void moveToNewLocation() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
@@ -110,15 +105,12 @@ public class GameMenuView extends View{
         System.out.println("NOT IMPLEMENTED YET");
     }
 
-    private void helpTips() {
-        System.out.println("NOT IMPLEMENTED YET");
+    private void showHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
-
-    private void mainMenu() {
-        System.out.println("NOT IMPLEMENTED YET");
-    }
-
+    
     private void displayGameMenu() {
         
-    }
+    }   
 }
