@@ -15,7 +15,7 @@ public class MainMenuView extends View {
                 + "N - Begin new game\n"
                 + "L - Load saved game\n"
                 + "H - View help menu\n"
-                + "E - Exit game\n");
+                + "X - Exit game\n");
     }
     
     /**
@@ -37,7 +37,7 @@ public class MainMenuView extends View {
             case 'H' :
                 showHelpMenu();
                 break;
-            case 'E' :
+            case 'X' :
                 return false;
             default:
                 System.out.println("Please select a valid input.");

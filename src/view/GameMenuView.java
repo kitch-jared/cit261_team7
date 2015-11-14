@@ -26,6 +26,7 @@ public class GameMenuView extends View{
               + "T - Time before hurricane\n"
               //This is just for me to test the DeliveryCenterView
               + "C - Enter Delivery Center\n"
+              + "R - Enter House\n"
               + "H - Help Menu\n"
               + "X - Exit to Main Menu\n");
     }
@@ -60,8 +61,11 @@ public class GameMenuView extends View{
             case 'H':
                 showHelpMenu();
                 break;
-             case 'C':
+            case 'C':
                 showDeliveryCenter();
+                break;
+            case 'R':
+                showHouse();
                 break;
             case 'X':
                 return false;
@@ -126,4 +130,9 @@ public class GameMenuView extends View{
     private void displayGameMenu() {
         
     }   
+
+    private void showHouse() {
+       HouseView house = new HouseView();
+       house.display(); 
+    }
 }
