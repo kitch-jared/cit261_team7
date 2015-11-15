@@ -17,9 +17,6 @@ public class DeliveryCenterView {
         
     }
     
-    /**
-     *
-     */
     public void display() {
         
         System.out.println("Please select an option:");
