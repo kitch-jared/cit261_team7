@@ -13,13 +13,13 @@ import java.util.Objects;
  *
  * @author Maxine
  */
-public class MegaAisles implements Serializable {
+public class StoreAisles implements Serializable {
     
     private Item item;
     private Item itemCost;
     public int quantity;
 
-    public MegaAisles() {
+    public StoreAisles() {
     }
     
     public Item getItem() {

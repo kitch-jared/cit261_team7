@@ -5,20 +5,7 @@
  */
 package hurricane_game;
 
-import static java.lang.System.in;
-import model.CampingAisles;
-import model.CampingStore;
-import model.Deliveries;
-import model.DeliveryCenter;
-import model.Game;
-import model.HouseRooms;
-import model.InventoryList;
-import model.Item;
-import model.Location;
-import model.MainMap;
-import model.Player;
 import view.MainMenuView;
-import view.WelcomeView;
 
 
 /**
@@ -41,18 +28,11 @@ public class Hurricane_game {
          MainMenuView mainView = new MainMenuView();
          mainView.display();
         
-        char in = mainView.getInput();
-        
-        System.out.println("YOU ENTERED " + in);
+//        char in = mainView.getInput();
+//        
+//        System.out.println("YOU ENTERED " + in);
 
         }
-        
-        
-        
-        
-        
-        
-        
     }
     
     

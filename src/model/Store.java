@@ -13,14 +13,14 @@ import java.util.Objects;
  * @author maloriegomm
  */
 
-public class MegaStore implements Serializable {
+public class Store implements Serializable {
     
     private int row;
     private int column;
     private int aisles;
     private Location[][] matrix;
 
-    public MegaStore() {
+    public Store() {
     }
     
     public int getRow() {
@@ -64,7 +64,7 @@ public class MegaStore implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MegaStore other = (MegaStore) obj;
+        final Store other = (Store) obj;
         if (this.row != other.row) {
             return false;
         }

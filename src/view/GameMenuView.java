@@ -12,55 +12,23 @@ import java.util.Scanner;
  *
  * @author Maxine
  */
-public class GameMenuView {
+public class GameMenuView extends View{
     
-    public void display() {
-        
-        System.out.println("Please select an option:");
-        System.out.println("M - Map of town");
-        System.out.println("S - Supplies list");
-        System.out.println("I - Inventory list");
-        System.out.println("L - Move to a new location");
-        System.out.println("D - Deliver supplies");
-        System.out.println("Y - View deliveries");
-        System.out.println("V - View what location has");
-        System.out.println("A - Money Accounts");
-        System.out.println("P - Survival Points Earned");
-        System.out.println("T - Time before hurricane");
-        System.out.println("H - Help");
-        System.out.println("X - Main Menu");
-        
-    }
-    
-    public char getInput() {
-        
-        Scanner in = new Scanner(System.in);
-        
-        String input = "";
-        char rtn = 0;
-        
-        while(input.length() < 1){
-            displayGameMenu();
-            input = in.nextLine();
-            
-            if(input.length() < 1) {
-                System.out.println("Pleses select an option");
-                displayGameMenu();
-            } else {
-            
-                rtn = input.toUpperCase().charAt(0);
-
-                 if(rtn != 'M' && rtn != 'S' && rtn != 'I' && rtn != 'L' && rtn != 'D'
-                         && rtn != 'Y' && rtn != 'V' && rtn != 'A' && rtn != 'P' && 
-                         rtn != 'T' && rtn != 'H' && rtn != 'X') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            
-            }
-        
-        }
-     return rtn;
+     public GameMenuView() {
+        super("M - Map of town\n"
+              + "S - Supplies list\n"
+              + "I - Inventory list\n"
+              + "L - Move to a new location\n"
+              + "D - View deliveries\n"
+              + "V - View what location has\n"
+              + "A - Money Accounts\n"
+              + "P - Survival Points Earned\n"
+              + "T - Time before hurricane\n"
+              //This is just for me to test the DeliveryCenterView
+              + "C - Enter Delivery Center\n"
+              + "R - Enter House\n"
+              + "H - Help Menu\n"
+              + "X - Exit to Main Menu\n");
     }
     
     
@@ -70,19 +38,13 @@ public class GameMenuView {
             case 'M':
                 townMap();
                 break;
-            case 'S':
-                suppliesList();
-                break;
             case 'I':
                 inventoryList();
                 break;
             case 'L':
-                moveToANewLocation();
+                moveToNewLocation();
                 break;
             case 'D':
-                deliverSupplies();
-                break;
-            case 'Y':
                 viewDeliveries();
                 break;
             case 'V':
@@ -97,10 +59,19 @@ public class GameMenuView {
                 timeRemaining();
                 break;
             case 'H':
-                helpTips();
+                showHelpMenu();
+                break;
+            case 'C':
+                showDeliveryCenter();
+                break;
+            case 'R':
+                showHouse();
                 break;
             case 'X':
                 return false;
+            default:
+                System.out.println("Please select a valid input.");
+                break;
             }
             return true;
         
@@ -118,7 +89,7 @@ public class GameMenuView {
         System.out.println("NOT IMPLEMENTED YET"); 
     }
 
-    private void moveToANewLocation() {
+    private void moveToNewLocation() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
@@ -146,15 +117,22 @@ public class GameMenuView {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
-    private void helpTips() {
-        System.out.println("NOT IMPLEMENTED YET");
+    private void showHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
-
-    private void mainMenu() {
-        System.out.println("NOT IMPLEMENTED YET");
+    
+     private void showDeliveryCenter() {
+        DeliveryCenterView deliveryCenter = new DeliveryCenterView();
+        deliveryCenter.display();
     }
-
+        
     private void displayGameMenu() {
         
+    }   
+
+    private void showHouse() {
+       HouseView house = new HouseView();
+       house.display(); 
     }
 }

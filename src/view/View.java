@@ -15,6 +15,10 @@ public abstract class View implements ViewInterface {
     
     private String menu;
     
+    public View(String menuString) {
+        menu = menuString;
+    }
+    
     @Override
     public void display() {
         boolean cont;

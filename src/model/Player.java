@@ -19,6 +19,7 @@ public class Player implements Serializable{
     private String name;
     private List<Item> inventory;
     private double money;
+    private List<Deliveries> deliveries;
     
     
     public Player() {
