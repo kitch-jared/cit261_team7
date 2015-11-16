@@ -22,6 +22,7 @@ public class MainMenuView extends View {
      * This  calls a method based on the input
      *
      * @param input
+     * @return 
      */
     
     @Override
