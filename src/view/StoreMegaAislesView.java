@@ -3,6 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/**********************
+ * The aisle views should display a list of items in that aisle.  So we will have to write a 
+ * statement that checks which aisle they are in and then gets a list of the items in that 
+ * aisle to display to the user and it's associated selection letter.
+ **********************/
+
 package view;
 
 /**

@@ -3,6 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*******************
+ * I think that we need to make this class more of an outline of what the user would see when they enter one
+ * of the stores.  We probably don't want a list of the two stores here.  
+ * It might prompt them to choose and aisle to go down or view their money, ect.
+ *******************/
+
+
 package view;
 
 /**
