@@ -64,21 +64,23 @@ public class DeliveryCenterView extends View{
         System.out.println("NOT IMPLEMENTED YET"); 
     }   
 
+    
+    
     public void deliveryOptions() {
         // create 3 new deliveries instances
-        Deliveries deliveryOne = new Deliveries();
-        deliveryOne.setType("Name Type");
-        
-        Deliveries deliveryTwo = new Deliveries();
-        deliveryTwo.setType("Name Type");
-        
-        Deliveries deliveryThree = new Deliveries();
-        deliveryThree.setType("Name Type");
+//        Deliveries deliveryOne = new Deliveries();
+//        deliveryOne.setType("Deliver supplies to the nursing home");
+//        
+//        Deliveries deliveryTwo = new Deliveries();
+//        deliveryTwo.setType("Deliver supplies to the post office");
+//        
+//        Deliveries deliveryThree = new Deliveries();
+//        deliveryThree.setType("Deliver supplies to the prison");
         
         System.out.println("Please select the type of delivery you would like to accept");
-        System.out.println("A - deliveryOne");
-        System.out.println("B - deliveryTwo");
-        System.out.println("C - deliveryThree");
+        System.out.println("A - Deliver supplies to the nursing home");
+        System.out.println("B - Deliver supplies to the post office");
+        System.out.println("C - Deliver supplies to the prison");
         System.out.println("X - Cancel");  
     }
 }
