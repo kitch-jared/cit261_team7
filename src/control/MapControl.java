@@ -6,32 +6,34 @@
 package control;
 
 import model.Location;
+import model.MainMap;
 
 /**
  *
  * @author maloriegomm
  */
 public class MapControl {
+    private int row;
+    private int col;
+    private Location[][] locations;
     
    public void move(Location l){
     
        System.out.println(l);
      
     }
-    /* How do I call the visited parameter from the location class? I keep getting
-       errors that the data types are incompatible. 
-   */
-   /*public boolean validLocation(Location visited) {
+    private static MainMap createMap() {
+        
+        MainMap map = new MainMap(3, 4);
+        
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map, scenes);
+        
+        return map;
+        
+    }
    
-       if (visited){
-            System.out.println("You have already visited this location.");
-            return location;
-        }
-        else {
-            System.out.println("Invalid entry. Please enter new coordinates.");
-            return location;
-        }
-   }*/
     public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) {
         
         if(timeRemaining < 0) {
@@ -53,6 +55,29 @@ public class MapControl {
             
             return calcTimeToDeduct;
         }
+    public Map() {
+        
     }
+    public MainMap (int row, int col) {
+    
+        if (row < 1 || col < 1) {
+            System.out.println("The number of rows and columns must be greater than 0");
+            return;
+        }
+        this.row = row;
+        this.col = col;
+        
+        this.locations = new Location[row][col];
+        
+        for (int r = 0; r < row; row++) {
+            Location location  = new Location();
+            location.setCol(col);
+            location.setRow(row);
+            location.visited(false);
+            
+            locations[row][col] = location;
+        } 
+    }   
+}
 
   
