@@ -12,15 +12,17 @@ import java.io.Serializable;
  * @author maloriegomm
  */
 public class Game implements Serializable {
-    
+
     private int survivalPoints;
     private int budget;
     public int timeRemaining;
     private int numberOfPointsEarned;
+    private String itemsList[];//can be an Enum or Array because it doesn't need to grow or shrink
+    public int neededSurvivalPoints;
 
     public Game() {
     }
-    
+
     public int getSurvivalPoints() {
         return survivalPoints;
     }
@@ -52,7 +54,7 @@ public class Game implements Serializable {
     public void setNumberOfPointsEarned(int numberOfPointsEarned) {
         this.numberOfPointsEarned = numberOfPointsEarned;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -91,13 +93,11 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "survivalPoints=" + survivalPoints + ", budget=" + budget + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + '}';
     }
-   
+
     ///////////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////////////
-    
     /* Need to set survival points, budget, calculate earned money, remaining time,
-       and points earned
-    */
-
+     and points earned
+     */
 }

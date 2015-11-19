@@ -50,6 +50,8 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() { // working on this function
+      
+        
       GameMenuView gameMenu = new GameMenuView();
       gameMenu.display();
       

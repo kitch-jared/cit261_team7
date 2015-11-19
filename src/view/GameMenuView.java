@@ -24,8 +24,7 @@ public class GameMenuView extends View{
               + "A - Money Accounts\n"
               + "P - Survival Points Earned\n"
               + "T - Time before hurricane\n"
-              //This is just for me to test the DeliveryCenterView
-              + "C - Enter Delivery Center\n"
+              + "C - Enter Delivery Center\n"//This is just for me to test the DeliveryCenterView
               + "R - Enter House\n"
               + "H - Help Menu\n"
               + "X - Exit to Main Menu\n");

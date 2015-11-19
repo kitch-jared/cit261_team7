@@ -20,6 +20,9 @@ public class Player implements Serializable{
     private List<Item> inventory;
     private double money;
     private List<Deliveries> deliveries;
+    public String itemsCurrent [];
+    public int currentSurvivalPoints;
+    private int remainingSurvivalPoints;
     
     
     public Player() {

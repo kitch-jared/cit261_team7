@@ -82,5 +82,28 @@ public class DeliveryCenterView extends View{
         System.out.println("B - Deliver supplies to the post office");
         System.out.println("C - Deliver supplies to the prison");
         System.out.println("X - Cancel");  
+        
+         
+//        public boolean doAction(char input) {
+//        
+//         switch(input) {
+//            case 'A' :
+//                AssignDelivery(char A);
+//                break;
+//            case 'B' :
+//                MakeDelivery();
+//                break;
+//            case 'C' :
+//                ViewDeliveries();
+//                break;
+//            case 'X':
+//                return false;
+//            default:
+//                System.out.println("Please select a valid input.");
+//                break;
+//            }
+//            return true;
+//        }
+        
     }
 }
