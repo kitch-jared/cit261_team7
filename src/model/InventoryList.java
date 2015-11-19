@@ -16,9 +16,9 @@ import java.util.Objects;
 public class InventoryList implements Serializable{
     
     public String itemsCurrent [];
-    private String itemsNeeded [];
+    private String itemsNeeded [];//can be an Enum or Array because it doesn't need to grow or shrink
     public int currentSurvivalPoints;
-    public int neededSurvivalPoints;
+    public int neededSurvivalPoints;//can be an Enum or Array because it doesn't need to grow or shrink
     private int remainingSurvivalPoints;
 
     
