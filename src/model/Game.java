@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -13,15 +14,25 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
+    private Player player;
     private int survivalPoints;
-    private int budget;
     public int timeRemaining;
     private int numberOfPointsEarned;
     private String itemsList[];//can be an Enum or Array because it doesn't need to grow or shrink
     public int neededSurvivalPoints;
 
     public Game() {
+        
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
 
     public int getSurvivalPoints() {
         return survivalPoints;
@@ -31,15 +42,8 @@ public class Game implements Serializable {
         this.survivalPoints = survivalPoints;
     }
 
-    public int getBudget() {
-        return budget;
-    }
 
-    public void setBudget(int budget) {
-        this.budget = budget;
-    }
-
-    public double getTimeRemaining() {
+    public int getTimeRemaining() {
         return timeRemaining;
     }
 
@@ -55,13 +59,30 @@ public class Game implements Serializable {
         this.numberOfPointsEarned = numberOfPointsEarned;
     }
 
+    public String[] getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(String[] itemsList) {
+        this.itemsList = itemsList;
+    }
+
+    public int getNeededSurvivalPoints() {
+        return neededSurvivalPoints;
+    }
+
+    public void setNeededSurvivalPoints(int neededSurvivalPoints) {
+        this.neededSurvivalPoints = neededSurvivalPoints;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + this.survivalPoints;
-        hash = 53 * hash + this.budget;
-        hash = 53 * hash + this.timeRemaining;
-        hash = 53 * hash + this.numberOfPointsEarned;
+        hash = 89 * hash + this.survivalPoints;
+        hash = 89 * hash + this.timeRemaining;
+        hash = 89 * hash + this.numberOfPointsEarned;
+        hash = 89 * hash + Arrays.deepHashCode(this.itemsList);
+        hash = 89 * hash + this.neededSurvivalPoints;
         return hash;
     }
 
@@ -77,13 +98,16 @@ public class Game implements Serializable {
         if (this.survivalPoints != other.survivalPoints) {
             return false;
         }
-        if (this.budget != other.budget) {
-            return false;
-        }
         if (this.timeRemaining != other.timeRemaining) {
             return false;
         }
         if (this.numberOfPointsEarned != other.numberOfPointsEarned) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.itemsList, other.itemsList)) {
+            return false;
+        }
+        if (this.neededSurvivalPoints != other.neededSurvivalPoints) {
             return false;
         }
         return true;
@@ -91,13 +115,19 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "survivalPoints=" + survivalPoints + ", budget=" + budget + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + '}';
+        return "Game{" + "survivalPoints=" + survivalPoints + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + ", itemsList=" + itemsList + ", neededSurvivalPoints=" + neededSurvivalPoints + '}';
     }
-
+    
+  
     ///////////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////////////
     /* Need to set survival points, budget, calculate earned money, remaining time,
      and points earned
      */
+
+    
+    
+   
 }
+

@@ -5,16 +5,17 @@
  */
 package hurricane_game;
 
+import model.Player;
 import view.MainMenuView;
-
+import view.WelcomeView;
 
 /**
- *
  * @author maloriegomm
  */
 public class Hurricane_game {
 
     public static void main(String[] args) {
+        
 //        
 //        Player player = new Player();
 //        
@@ -24,7 +25,7 @@ public class Hurricane_game {
 //        player.setName(welcomeView.getPlayerName());
 //        
 //        welcomeView.displayPlayerNameBanner(player);
-        
+//        
          MainMenuView mainView = new MainMenuView();
          mainView.display();
         

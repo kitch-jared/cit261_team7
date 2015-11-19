@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package view;
+
+import control.GameControl;
+import model.Game;
+import model.Player;
+
 /**
  *
  * @author maloriegomm
@@ -20,7 +25,6 @@ public class MainMenuView extends View {
     
     /**
      * This  calls a method based on the input
-     *
      * @param input
      * @return 
      */
@@ -49,8 +53,18 @@ public class MainMenuView extends View {
     
     }
 
-    private void startNewGame() { // working on this function
-      
+    public void startNewGame() { 
+        
+        Game game = new Game();// create new game
+        Player player = new Player();// create new player
+        
+        WelcomeView welcomeView = new WelcomeView();
+        welcomeView.displayBanner();
+        
+        player.setName(welcomeView.getPlayerName());// set players name in player class
+        
+        welcomeView.displayPlayerNameBanner(player);
+        game.setPlayer(player);// save player in game
         
       GameMenuView gameMenu = new GameMenuView();
       gameMenu.display();
