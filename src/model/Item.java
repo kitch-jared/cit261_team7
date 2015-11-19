@@ -14,8 +14,6 @@ import java.util.Objects;
  * @author maloriegomm
  */
 
-//Should I list out all the items here???
-
 public class Item implements Serializable{
     
     private String name;

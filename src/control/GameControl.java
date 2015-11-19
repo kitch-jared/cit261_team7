@@ -6,7 +6,11 @@
 package control;
 
 import java.util.Scanner;
+import model.Game;
+import model.InventoryList;
 import model.Player;
+import view.MainMenuView;
+import view.WelcomeView;
 
 /**
  *
@@ -14,25 +18,27 @@ import model.Player;
  */
 public class GameControl {
     
-    public void createNewGame(Player name) {
+    /**
+     *
+     */
+    public void createNewGame() {
         
-        Scanner in = new Scanner(System.in);
+        Game game = new Game();// create new game
+        Player player = new Player();// create new player
         
-        String input ="";
+        WelcomeView welcomeView = new WelcomeView();
+        welcomeView.displayBanner();
         
-        char rtn = 0;
+        player.setName(welcomeView.getPlayerName());// set players name in player class
         
-        rtn = input.toUpperCase().charAt(0);
+        welcomeView.displayPlayerNameBanner(player);
+        game.setPlayer(player);// save player in game
+//        
+//        ItemsList[] itemsList = GameControl.createItemsList();
+//        game.setItemsList(itemsList);
         
-        if((rtn !='y') && (rtn != 'Y') && (rtn != 'n') && (rtn !='N')){
-            System.out.println(name + ", you entered" + rtn);
-            System.out.println("Please Y for yes or N for no");
-        }
-        else {
-            System.out.println(name + "Welcome to your game. The clock starts now!");
-            
-            
-        }
+       
+        
     }
     
     public void initializeMap() {
@@ -47,12 +53,15 @@ public class GameControl {
     
     }
     
-    public Player createNewPlayer() {
-        
-        Player name = new Player();
-        
-        return name;
+//    public Player createNewPlayer() {
+//        
+//        Player name = new Player();
+//        
+//        return name;
+//    
+//    }
     
-    }
-    
+    public void createItemsList() {
+            
+    }    
 }
