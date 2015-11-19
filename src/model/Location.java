@@ -106,5 +106,9 @@ public class Location implements Serializable{
      public boolean HasItem(){
         return item != null;
     } 
+
+    public void visited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
