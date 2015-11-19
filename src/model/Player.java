@@ -23,8 +23,7 @@ public class Player implements Serializable{
     public String itemsCurrent [];
     public int currentSurvivalPoints;
     private int remainingSurvivalPoints;
-    
-    
+   
     public Player() {
         inventory = new ArrayList<>();
     }
@@ -51,6 +50,38 @@ public class Player implements Serializable{
 
     public void setMoney(double money) {
         this.money = money;
+    }
+    
+    public List<Deliveries> getDeliveries() {
+        return deliveries;
+    }
+
+    public void setDeliveries(List<Deliveries> deliveries) {
+        this.deliveries = deliveries;
+    }
+
+    public String[] getItemsCurrent() {
+        return itemsCurrent;
+    }
+
+    public void setItemsCurrent(String[] itemsCurrent) {
+        this.itemsCurrent = itemsCurrent;
+    }
+
+    public int getCurrentSurvivalPoints() {
+        return currentSurvivalPoints;
+    }
+
+    public void setCurrentSurvivalPoints(int currentSurvivalPoints) {
+        this.currentSurvivalPoints = currentSurvivalPoints;
+    }
+
+    public int getRemainingSurvivalPoints() {
+        return remainingSurvivalPoints;
+    }
+
+    public void setRemainingSurvivalPoints(int remainingSurvivalPoints) {
+        this.remainingSurvivalPoints = remainingSurvivalPoints;
     }
 
     @Override
@@ -79,5 +110,5 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + '}';
     }
-
+    
 }
