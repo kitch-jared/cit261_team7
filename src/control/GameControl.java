@@ -18,9 +18,6 @@ import view.WelcomeView;
  */
 public class GameControl {
     
-    /**
-     *
-     */
     public void createNewGame() {
         
         Game game = new Game();// create new game
@@ -42,7 +39,7 @@ public class GameControl {
     }
     
     public void initializeMap() {
-    
+        
     }
     
     public void saveGame() {

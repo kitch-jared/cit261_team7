@@ -7,6 +7,7 @@ package view;
 
 import control.GameControl;
 import model.Game;
+import model.MainMap;
 import model.Player;
 
 /**
@@ -65,6 +66,7 @@ public class MainMenuView extends View {
         
         welcomeView.displayPlayerNameBanner(player);
         game.setPlayer(player);// save player in game
+        
         
       GameMenuView gameMenu = new GameMenuView();
       gameMenu.display();

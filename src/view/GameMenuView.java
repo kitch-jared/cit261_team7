@@ -7,6 +7,7 @@ package view;
 
 import control.GameControl;
 import java.util.Scanner;
+import model.MainMap;
 
 /**
  *
@@ -78,7 +79,8 @@ public class GameMenuView extends View{
         }
 
     private void townMap() {
-        System.out.println("NOT IMPLEMENTED YET");
+//        MainMap map = new MainMap();
+//        map.display();
     }
 
     private void suppliesList() {
