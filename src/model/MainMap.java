@@ -21,6 +21,10 @@ public class MainMap implements Serializable {
         matrix = new Location[NUM_ROWS][NUM_COLS];
     }
 
+    public MainMap(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Location[][] getMatrix() {
         return matrix;
     }
