@@ -8,44 +8,48 @@ package model;
 import java.io.Serializable;
 
 /**
- *
  * @author Maxine
  */
 public class MainMap implements Serializable {
     
-    private static final int NUM_ROWS = 3;
-    private static final int NUM_COLS = 4;
-    private Location[][] matrix;
+    private int NUM_ROWS = 3;
+    private int NUM_COLS = 4;
+    private Location[][] locations;
 
     public MainMap() {
-        matrix = new Location[NUM_ROWS][NUM_COLS];
+//        locations = new Location[NUM_ROWS][NUM_COLS];
     }
 
-    public MainMap(int i, int i0) {
-     if (NUM_ROWS < 1 || NUM_COLS < 1) {
+    public MainMap(int NUM_ROWS, int NUM_COLS) {
+        
+        if (NUM_ROWS < 1 || NUM_COLS < 1) {
             System.out.println("The number of rows and columns must be greater than 0");
             return;
         }
-        /*this.NUM_ROWS = NUM_COLS ;
+     
+        this.NUM_ROWS = NUM_ROWS;
         this.NUM_COLS = NUM_COLS;
         
-        this.locations = new Location[row][col];
+        this.locations = new Location[NUM_ROWS][NUM_COLS];
         
-        for (int r = 0; r < NUM_ROWS; NUM_ROWS++) {
-            Location location  = new Location();
-            location.setCol(NUM_COLS);
-            location.setRow(NUM_ROWS);
-            location.visited(false);
-            
-            locations[NUM_ROWS][NUM_COLS] = location;
-        }*/ }
-
-    public Location[][] getMatrix() {
-        return matrix;
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                Location location  = new Location();
+                location.setCol(NUM_COLS);
+                location.setRow(NUM_ROWS);
+                location.setVisited(false);
+                
+                locations[NUM_ROWS][NUM_COLS] = location;
+            }
+        }
     }
 
-    public void setMatrix(Location[][] matrix) {
-        this.matrix = matrix;
+    public Location[][] getMatrix() {
+        return locations;
+    }
+
+    public void setMatrix(Location[][] locations) {
+        this.locations = locations;
     }
 
     ////////////////////////////////////////
@@ -57,7 +61,7 @@ public class MainMap implements Serializable {
 //        
 //        for(int row = 0; row < NUM_ROWS; row++) {
 //           for(int col = 0; col < NUM_COLS; col++) {
-//               if (matrix[row][col] == null) {
+//               if (locations[row][col] == null) {
 //                   System.out.println("x ");
 //               }
 //           }
@@ -73,7 +77,7 @@ public class MainMap implements Serializable {
         
         for(int row = 0; row < NUM_ROWS; row++) {
             for(int col = 0; col < NUM_COLS; col++) {
-                if(matrix[row][col] == null) {
+                if(locations[row][col] == null) {
                     rtn += "x  ";
                 }
                 else{
@@ -86,18 +90,18 @@ public class MainMap implements Serializable {
     }
     
     
-    public void initialize() {
-      
-        for(int row = 0; row < NUM_ROWS; row++) {
-            for(int col = 0; col < NUM_COLS; col++) {
-                Location location = new Location();
-                location.setCol(col);
-                location.setRow(row);
-                
-                matrix[row][col] = location;
-            }
-        }
-        
-    }
+//    public void initialize() {
+//      
+//        for(int row = 0; row < NUM_ROWS; row++) {
+//            for(int col = 0; col < NUM_COLS; col++) {
+//                Location locations = new Location();
+//                locations.setCol(col);
+//                locations.setRow(row);
+//                
+//                locations[row][col] = locations;
+//            }
+//        }
+//        
+//    }
     
 }
