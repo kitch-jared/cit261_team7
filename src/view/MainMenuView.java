@@ -21,6 +21,7 @@ public class MainMenuView extends View {
                 + "N - Begin new game\n"
                 + "L - Load saved game\n"
                 + "H - View help menu\n"
+                + "S - Save Game\n"
                 + "X - Exit game\n");
     }
     
@@ -42,6 +43,9 @@ public class MainMenuView extends View {
                 break;
             case 'H' :
                 showHelpMenu();
+                break;
+            case 'S':
+                saveGame();
                 break;
             case 'X' :
                 return false;
@@ -81,5 +85,9 @@ public class MainMenuView extends View {
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
+    }
+
+    private void saveGame() {
+        System.out.println("NOT YET IMPLEMENTED");
     }
 }
