@@ -60,6 +60,8 @@ public class GameControl {
             
     }  
     
+    
+    
     public enum LocationNames{
         house,
         mega_store, 
@@ -68,12 +70,12 @@ public class GameControl {
     }
     
     
-    private void assignNamesToLocations(MainMap map, LocationNames[] names){
-      Location[][]  locations = map.getLocations();
-      
-      locations[1][1].setName(names[LocationNames.house.ordinal()]);
-      locations[2][1].setName(names[LocationNames.mega_store.ordinal()]);
-      locations[3][4].setName(names[LocationNames.camping_store.ordinal()]);
-      locations[1][3].setName(names[LocationNames.delivery_center.ordinal()]);
+    public void assignNamesToLocations(MainMap map){
+      Location[][] locations = map.getLocations();
+     
+      locations[1][1].map.setLocations(LocationNames.house);
+      locations[2][1].map.setLocations(LocationNames.mega_store);
+      locations[3][4].map.setLocations(LocationNames.camping_store);
+      locations[1][3].map.setLocations(LocationNames.delivery_center);
     }
 }

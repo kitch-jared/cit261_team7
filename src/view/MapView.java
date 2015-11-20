@@ -9,6 +9,8 @@ package view;
  *
  * @author maloriegomm
  */
-public class MapView {
+public class MapView extends View{
+    
+    
     
 }

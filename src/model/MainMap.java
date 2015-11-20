@@ -45,6 +45,22 @@ public class MainMap implements Serializable {
         }
     }
 
+    public int getNUM_ROWS() {
+        return NUM_ROWS;
+    }
+
+    public void setNUM_ROWS(int NUM_ROWS) {
+        this.NUM_ROWS = NUM_ROWS;
+    }
+
+    public int getNUM_COLS() {
+        return NUM_COLS;
+    }
+
+    public void setNUM_COLS(int NUM_COLS) {
+        this.NUM_COLS = NUM_COLS;
+    }
+
     public Location[][] getLocations() {
         return locations;
     }
@@ -53,6 +69,15 @@ public class MainMap implements Serializable {
         this.locations = locations;
     }
 
+    public String getNames() {
+        return names;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+   
     ////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////

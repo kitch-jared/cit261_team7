@@ -20,9 +20,10 @@ public class MapControl {
     public static MainMap createMap() {
         
         MainMap map = new MainMap(3, 4);
+        
         //Scene[] scenes = createScenes();
         GameControl gameControl = new GameControl();
-        gameControl.assignNamesToLocations(map, names);
+        gameControl.assignNamesToLocations(map);
         return map;
     }
     

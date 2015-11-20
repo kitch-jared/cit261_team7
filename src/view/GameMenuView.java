@@ -37,7 +37,7 @@ public class GameMenuView extends View{
     
         switch (input) {
             case 'M':
-                townMap();
+                displayMap();
                 break;
             case 'I':
                 inventoryList();
@@ -78,9 +78,12 @@ public class GameMenuView extends View{
         
         }
 
-    private void townMap() {
+    private void displayMap() {
 //        MainMap map = new MainMap();
-//        map.display();
+//        map.toString();
+//        
+////        MapView viewMap = new MapView();
+////        viewMap.display();
     }
 
     private void suppliesList() {
