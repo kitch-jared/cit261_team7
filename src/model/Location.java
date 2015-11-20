@@ -18,7 +18,7 @@ public class Location implements Serializable{
     private int row;
     private int col;
     public boolean visited;
-    public 
+    private MainMap name; 
 
     public Location() {
     }

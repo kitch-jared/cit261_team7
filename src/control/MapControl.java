@@ -16,13 +16,7 @@ public class MapControl {
     private int row;
     private int col;
     private Location[][] locations;
-    private Names[] names;
     
-   public void move(Location l){
-    
-       System.out.println(l);
-     
-    }
     public static MainMap createMap() {
         
         MainMap map = new MainMap(3, 4);
@@ -30,6 +24,12 @@ public class MapControl {
         GameControl gameControl = new GameControl();
         gameControl.assignNamesToLocations(map, names);
         return map;
+    }
+    
+    public void move(Location l){
+    
+       System.out.println(l);
+     
     }
    
     public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) {

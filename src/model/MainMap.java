@@ -15,6 +15,7 @@ public class MainMap implements Serializable {
     private int NUM_ROWS = 3;
     private int NUM_COLS = 4;
     private Location[][] locations;
+    private String names;
 
     public MainMap() {
 //        locations = new Location[NUM_ROWS][NUM_COLS];
@@ -103,5 +104,7 @@ public class MainMap implements Serializable {
 //        }
 //        
 //    }
+    
+    
     
 }

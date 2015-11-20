@@ -61,14 +61,14 @@ public class GameControl {
     }  
     
     public enum LocationNames{
-    house,
-    mega_store, 
-    camping_store,
-    delivery_center; 
-}
+        house,
+        mega_store, 
+        camping_store,
+        delivery_center; 
+    }
     
     
-    private static void assignNamesToLocations(MainMap map, LocationNames[] names){
+    private void assignNamesToLocations(MainMap map, LocationNames[] names){
       Location[][]  locations = map.getLocations();
       
       locations[1][1].setName(names[LocationNames.house.ordinal()]);
