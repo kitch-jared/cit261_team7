@@ -22,8 +22,23 @@ public class MainMap implements Serializable {
     }
 
     public MainMap(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     if (NUM_ROWS < 1 || NUM_COLS < 1) {
+            System.out.println("The number of rows and columns must be greater than 0");
+            return;
+        }
+        /*this.NUM_ROWS = NUM_COLS ;
+        this.NUM_COLS = NUM_COLS;
+        
+        this.locations = new Location[row][col];
+        
+        for (int r = 0; r < NUM_ROWS; NUM_ROWS++) {
+            Location location  = new Location();
+            location.setCol(NUM_COLS);
+            location.setRow(NUM_ROWS);
+            location.visited(false);
+            
+            locations[NUM_ROWS][NUM_COLS] = location;
+        }*/ }
 
     public Location[][] getMatrix() {
         return matrix;
