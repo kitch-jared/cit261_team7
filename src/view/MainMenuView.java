@@ -60,7 +60,7 @@ public class MainMenuView extends View {
 
     public void startNewGame() { 
        
-        GameControl gameControlInstance = new GameControl(); //Create the instance
+        GameControl gameControlInstance = new GameControl(); //Create the instance of game control
         gameControlInstance.createNewGame();        
         
         GameMenuView gameMenu = new GameMenuView();

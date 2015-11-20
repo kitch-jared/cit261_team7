@@ -30,16 +30,12 @@ public class GameControl {
         
         welcomeView.displayPlayerNameBanner(player);
         game.setPlayer(player);// save player in game
-//        
-//        ItemsList[] itemsList = GameControl.createItemsList();
-//        game.setItemsList(itemsList);
-        
+   
        
         
     }
     
     public void initializeMap() {
-        
         
         
     }
@@ -51,14 +47,6 @@ public class GameControl {
     public void retrieveGame() {
     
     }
-    
-//    public Player createNewPlayer() {
-//        
-//        Player name = new Player();
-//        
-//        return name;
-//    
-//    }
     
     public void createItemsList() {
             
