@@ -59,21 +59,12 @@ public class MainMenuView extends View {
     }
 
     public void startNewGame() { 
+       
+        GameControl gameControlInstance = new GameControl(); //Create the instance
+        gameControlInstance.createNewGame();        
         
-        Game game = new Game();// create new game
-        Player player = new Player();// create new player
-        
-        WelcomeView welcomeView = new WelcomeView();
-        welcomeView.displayBanner();
-        
-        player.setName(welcomeView.getPlayerName());// set players name in player class
-        
-        welcomeView.displayPlayerNameBanner(player);
-        game.setPlayer(player);// save player in game
-        
-        
-      GameMenuView gameMenu = new GameMenuView();
-      gameMenu.display();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
       
     }
 

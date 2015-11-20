@@ -40,6 +40,8 @@ public class GameControl {
     
     public void initializeMap() {
         
+        
+        
     }
     
     public void saveGame() {

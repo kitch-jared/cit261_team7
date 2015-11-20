@@ -23,6 +23,7 @@ public class InventoryList implements Serializable{
 
     
     public InventoryList() {
+        
     }
 
      public String[] getItemsCurrent() {
