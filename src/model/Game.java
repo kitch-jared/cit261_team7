@@ -7,6 +7,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -15,11 +16,12 @@ import java.util.Arrays;
 public class Game implements Serializable {
 
     private Player player;
-    private int survivalPoints;
+    private InventoryList survivalPoints;
     public int timeRemaining;
     private int numberOfPointsEarned;
-    private String itemsList[];//can be an Enum or Array because it doesn't need to grow or shrink
-    public int neededSurvivalPoints;
+    private InventoryList[] itemsList;//can be an Enum or Array because it doesn't need to grow or shrink
+    private InventoryList[]itemsNeeded;
+    public InventoryList neededSurvivalPoints;
 
     public Game() {
         
@@ -33,15 +35,21 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-
-    public int getSurvivalPoints() {
+    public InventoryList getSurvivalPoints() {
         return survivalPoints;
     }
 
-    public void setSurvivalPoints(int survivalPoints) {
+    public void setSurvivalPoints(InventoryList survivalPoints) {
         this.survivalPoints = survivalPoints;
     }
 
+    public InventoryList getNeededSurvivalPoints() {
+        return neededSurvivalPoints;
+    }
+
+    public void setNeededSurvivalPoints(InventoryList neededSurvivalPoints) {
+        this.neededSurvivalPoints = neededSurvivalPoints;
+    }
 
     public int getTimeRemaining() {
         return timeRemaining;
@@ -59,30 +67,32 @@ public class Game implements Serializable {
         this.numberOfPointsEarned = numberOfPointsEarned;
     }
 
-    public String[] getItemsList() {
+    public InventoryList[] getItemsList() {
         return itemsList;
     }
 
-    public void setItemsList(String[] itemsList) {
+    public void setItemsList(InventoryList[] itemsList) {
         this.itemsList = itemsList;
     }
-
-    public int getNeededSurvivalPoints() {
-        return neededSurvivalPoints;
+       
+    public InventoryList[] getItemsNeeded() {
+        return itemsNeeded;
     }
 
-    public void setNeededSurvivalPoints(int neededSurvivalPoints) {
-        this.neededSurvivalPoints = neededSurvivalPoints;
+    public void setItemsNeeded(InventoryList[] itemsNeeded) {
+        this.itemsNeeded = itemsNeeded;
     }
     
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + this.survivalPoints;
-        hash = 89 * hash + this.timeRemaining;
-        hash = 89 * hash + this.numberOfPointsEarned;
-        hash = 89 * hash + Arrays.deepHashCode(this.itemsList);
-        hash = 89 * hash + this.neededSurvivalPoints;
+        hash = 13 * hash + Objects.hashCode(this.player);
+        hash = 13 * hash + Objects.hashCode(this.survivalPoints);
+        hash = 13 * hash + this.timeRemaining;
+        hash = 13 * hash + this.numberOfPointsEarned;
+        hash = 13 * hash + Arrays.deepHashCode(this.itemsList);
+        hash = 13 * hash + Arrays.deepHashCode(this.itemsNeeded);
+        hash = 13 * hash + Objects.hashCode(this.neededSurvivalPoints);
         return hash;
     }
 
@@ -95,7 +105,10 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (this.survivalPoints != other.survivalPoints) {
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.survivalPoints, other.survivalPoints)) {
             return false;
         }
         if (this.timeRemaining != other.timeRemaining) {
@@ -107,25 +120,20 @@ public class Game implements Serializable {
         if (!Arrays.deepEquals(this.itemsList, other.itemsList)) {
             return false;
         }
-        if (this.neededSurvivalPoints != other.neededSurvivalPoints) {
+        if (!Arrays.deepEquals(this.itemsNeeded, other.itemsNeeded)) {
+            return false;
+        }
+        if (!Objects.equals(this.neededSurvivalPoints, other.neededSurvivalPoints)) {
             return false;
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "survivalPoints=" + survivalPoints + ", timeRemaining=" + timeRemaining + ", numberOfPointsEarned=" + numberOfPointsEarned + ", itemsList=" + itemsList + ", neededSurvivalPoints=" + neededSurvivalPoints + '}';
-    }
-    
-  
     ///////////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////////////
     /* Need to set survival points, budget, calculate earned money, remaining time,
      and points earned
      */
-
     
     
    
