@@ -8,6 +8,7 @@ package control;
 import java.util.Scanner;
 import model.Game;
 import model.InventoryList;
+import model.MainMap;
 import model.Player;
 import view.MainMenuView;
 import view.WelcomeView;
@@ -31,6 +32,12 @@ public class GameControl {
         welcomeView.displayPlayerNameBanner(player);
         game.setPlayer(player);// save player in game
    
+        MainMap map = MapControl.createMap();
+        game.setMap(map);
+        
+        
+        
+        
        
         
     }

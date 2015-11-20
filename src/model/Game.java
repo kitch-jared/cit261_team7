@@ -16,6 +16,7 @@ import java.util.Objects;
 public class Game implements Serializable {
 
     private Player player;
+    private MainMap map;
     private InventoryList survivalPoints;
     public int timeRemaining;
     private int numberOfPointsEarned;
@@ -33,6 +34,14 @@ public class Game implements Serializable {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public MainMap getMap() {
+        return map;
+    }
+
+    public void setMap(MainMap map) {
+        this.map = map;
     }
 
     public InventoryList getSurvivalPoints() {

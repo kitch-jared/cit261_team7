@@ -22,16 +22,12 @@ public class MapControl {
        System.out.println(l);
      
     }
-    private static MainMap createMap() {
+    public static MainMap createMap() {
         
         MainMap map = new MainMap(3, 4);
-        
         //Scene[] scenes = createScenes();
-        
         //GameControl.assignScenesToLocations(map, scenes);
-        
         return map;
-        
     }
    
     public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) {
