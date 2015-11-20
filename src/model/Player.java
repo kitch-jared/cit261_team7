@@ -25,7 +25,7 @@ public class Player implements Serializable{
     private int remainingSurvivalPoints;
    
     public Player() {
-        inventory = new ArrayList<>();
+        //inventory = new ArrayList<>();
     }
 
     public String getName() {
