@@ -26,9 +26,9 @@ public class MapControl {
         
         MainMap map = new MainMap(3, 4);
         
-        Scene[] scenes = createScenes();
+        //Scene[] scenes = createScenes();
         
-        GameControl.assignScenesToLocations(map, scenes);
+        //GameControl.assignScenesToLocations(map, scenes);
         
         return map;
         
@@ -55,29 +55,13 @@ public class MapControl {
             
             return calcTimeToDeduct;
         }
-    public Map() {
+    /*public Map() {
         
     }
-    public MainMap (int row, int col) {
+    //public MainMap (int row, int col) {
     
-        if (row < 1 || col < 1) {
-            System.out.println("The number of rows and columns must be greater than 0");
-            return;
-        }
-        this.row = row;
-        this.col = col;
         
-        this.locations = new Location[row][col];
-        
-        for (int r = 0; r < row; row++) {
-            Location location  = new Location();
-            location.setCol(col);
-            location.setRow(row);
-            location.visited(false);
-            
-            locations[row][col] = location;
-        } 
-    }   
+    }*/
 }
 
   
