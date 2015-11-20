@@ -16,6 +16,7 @@ public class MapControl {
     private int row;
     private int col;
     private Location[][] locations;
+    private Names[] names;
     
    public void move(Location l){
     
@@ -26,7 +27,8 @@ public class MapControl {
         
         MainMap map = new MainMap(3, 4);
         //Scene[] scenes = createScenes();
-        //GameControl.assignScenesToLocations(map, scenes);
+        GameControl gameControl = new GameControl();
+        gameControl.assignNamesToLocations(map, names);
         return map;
     }
    

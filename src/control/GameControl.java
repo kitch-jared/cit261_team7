@@ -8,6 +8,7 @@ package control;
 import java.util.Scanner;
 import model.Game;
 import model.InventoryList;
+import model.Location;
 import model.MainMap;
 import model.Player;
 import view.MainMenuView;
@@ -57,5 +58,22 @@ public class GameControl {
     
     public void createItemsList() {
             
-    }    
+    }  
+    
+    public enum LocationNames{
+    house,
+    mega_store, 
+    camping_store,
+    delivery_center; 
+}
+    
+    
+    private static void assignNamesToLocations(MainMap map, LocationNames[] names){
+      Location[][]  locations = map.getLocations();
+      
+      locations[1][1].setName(names[LocationNames.house.ordinal()]);
+      locations[2][1].setName(names[LocationNames.mega_store.ordinal()]);
+      locations[3][4].setName(names[LocationNames.camping_store.ordinal()]);
+      locations[1][3].setName(names[LocationNames.delivery_center.ordinal()]);
+    }
 }

@@ -44,11 +44,11 @@ public class MainMap implements Serializable {
         }
     }
 
-    public Location[][] getMatrix() {
+    public Location[][] getLocations() {
         return locations;
     }
 
-    public void setMatrix(Location[][] locations) {
+    public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
 
