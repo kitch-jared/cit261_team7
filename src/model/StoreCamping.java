@@ -28,4 +28,13 @@ public enum StoreCamping implements Serializable {
         return this.aisleDescription;
     }
     
+    public void printAisleNames() {
+    
+        StoreCamping[] aisleNames = StoreCamping.values();
+        
+        for (StoreCamping aisleName :aisleNames) {
+            System.out.println(aisleNames);
+        }
+    }
+
 }
