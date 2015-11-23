@@ -8,7 +8,8 @@ package hurricane_game;
 import model.Player;
 import view.MainMenuView;
 import view.WelcomeView;
-
+import model.StoreAislesCamping;
+import model.StoreCamping;
 /**
  * @author maloriegomm
  */
