@@ -30,18 +30,25 @@ public enum StoreAislesCamping implements Serializable {
     
     StoreAislesCamping(int cost) {
         this.costOfItem = cost;
+        
     }
     
     public void printItemList() {
         
         StoreAislesCamping[] items = StoreAislesCamping.values();
         
-        for (StoreAislesCamping item : items){
-            System.out.println(item.ordinal() +": " + items);
-        }
+        int total = 0;
         
-    
+        for (int q = 1; q <= 3; q++) {
+            int quantity = 0 + q++;
+            
+            for (StoreAislesCamping item : items) {
+                System.out.println(items * q);
+            }
+        }
     }
+    
+    
     public int getCostOfItem() {
         return this.costOfItem;
     }
