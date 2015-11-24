@@ -43,7 +43,11 @@ public enum StoreAislesCamping implements Serializable {
             int quantity = 0 + q++;
             
             for (StoreAislesCamping item : items) {
-                System.out.println(items * q);
+                
+                total = StoreAislesCamping.values * q;
+                
+                System.out.println(total);
+                
             }
         }
     }
