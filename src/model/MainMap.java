@@ -129,6 +129,10 @@ public class MainMap implements Serializable {
 //        }
 //        
 //    }
+
+    public void initialize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
