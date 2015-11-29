@@ -20,6 +20,7 @@ public class Game implements Serializable {
     private InventoryList survivalPoints;
     public int timeRemaining;
     private int numberOfPointsEarned;
+    private Item[] gameItemList;
     private InventoryList[] itemsList;//can be an Enum or Array because it doesn't need to grow or shrink
     private InventoryList[]itemsNeeded;
     public InventoryList neededSurvivalPoints;
