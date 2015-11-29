@@ -7,6 +7,7 @@ package control;
 
 import model.Location;
 import model.MainMap;
+import model.Player;
 
 /**
  *
@@ -18,9 +19,15 @@ public class MapControl {
     private int col;
     private Location[][] locations;
     
-    public static MainMap createMap() {
+    public static MainMap createMap(Player player) {
         
         MainMap map = new MainMap(3, 4);
+        
+        map.initialize();
+        
+        player.setLocation(map.getLocations()[1][1]);
+        
+        return map;
         
         Location location = createLocation();
         
