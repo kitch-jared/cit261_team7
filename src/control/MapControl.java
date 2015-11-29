@@ -13,6 +13,7 @@ import model.MainMap;
  * @author maloriegomm
  */
 public class MapControl {
+
     private int row;
     private int col;
     private Location[][] locations;
@@ -20,6 +21,8 @@ public class MapControl {
     public static MainMap createMap() {
         
         MainMap map = new MainMap(3, 4);
+        
+        Location location = createLocation();
         
         //Scene[] scenes = createScenes();
         GameControl gameControl = new GameControl();
@@ -54,6 +57,10 @@ public class MapControl {
             
             return calcTimeToDeduct;
         }
+    
+    private static Location createLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     /*public Map() {
         
     }
