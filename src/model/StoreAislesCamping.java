@@ -14,23 +14,32 @@ import java.io.Serializable;
  */
 public enum StoreAislesCamping implements Serializable {
 
-    Tent(50),
-    Canopy(30),
-    Flashlight(10),
-    Lantern(15),
-    Candles(5),
-    Matches(1),
-    Batteries(8),
-    Stove(25),
-    Grill(20),
-    Propane(10),
-    Charcoal(10);
+    TENT("Tent", 50), // capitalize everything in enum list
+    CANOPY("Canopy", 30),
+    FLASHLIGHT("Flashlight", 10),
+    LANTERN("Lantern", 15),
+    CANDLES("Candles", 5),
+    MATCHES("Matches", 1),
+    BATTERIES("Batteries", 8),
+    STOVE("Stove", 25),
+    GRILL("Grill", 20),
+    PROPANE("Propane", 10),
+    CHARCOAL("Charcoal", 10);
     
     private final int costOfItem;
+    private final String item;
     
-    StoreAislesCamping(int cost) {
+    StoreAislesCamping(String name, int cost) {
         this.costOfItem = cost;
-        
+        this.item = name;
+    }
+    
+    public int getcostOfItem() {
+        return costOfItem;
+    }
+    
+    public String getItem() {
+        return item;
     }
     
     public void printItemList() {
@@ -44,7 +53,7 @@ public enum StoreAislesCamping implements Serializable {
             
             for (StoreAislesCamping item : items) {
                 
-                total = StoreAislesCamping.values * q;
+                total = item.getCostOfItem() * q;
                 
                 System.out.println(total);
                 
