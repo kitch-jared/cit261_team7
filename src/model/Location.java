@@ -18,12 +18,35 @@ public class Location implements Serializable{
     private int row;
     private int col;
     public boolean visited;
+    private String nameOfLocation;
     
-    
-    
-
     public Location() {
+        
     }
+
+    public static enum LocationName {
+        HOUSE("House"),
+        MEGA_STORE("Mega Store"), 
+        CAMPING_STORE("Camping Store"),
+        DELIVERY_CENTER("Delivery Center"); 
+        
+        private final String positionName;
+        private String getName;
+        
+        LocationName(String name) {
+            this.positionName = name;
+        }
+        public String getName() {
+        return this.positionName;
+        }
+        
+        @Override
+        public String toString() {
+            return this.getName;
+        }
+    }
+    
+    
 
     public Item getItem() {
         return item;
@@ -56,7 +79,13 @@ public class Location implements Serializable{
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+    public String getNameOfLocation() {
+        return nameOfLocation;
+    }
 
+    public void setNameOfLocation(String nameOfLocation) {
+        this.nameOfLocation = nameOfLocation;
+    }
     @Override
     public int hashCode() {
         int hash = 3;
@@ -111,7 +140,11 @@ public class Location implements Serializable{
     } 
 
     public void visited(boolean b) {
+        System.out.println();
+        }
+    public void setLocations(LocationName locationName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
 }
