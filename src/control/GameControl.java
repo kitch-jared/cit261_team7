@@ -80,7 +80,7 @@ public class GameControl {
     }*/
     
     
-    public void assignNamesToLocations(MainMap map, Location locationName) {
+    public void assignNamesToLocations(MainMap map) {
       Location[][] locations = map.getLocations();
       locations[1][1].setLocations(LocationName.HOUSE);      
       locations[2][1].setLocations(LocationName.MEGA_STORE);
