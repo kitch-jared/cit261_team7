@@ -14,79 +14,48 @@ import java.util.Objects;
  * @author maloriegomm
  */
 
-public class Item implements Serializable{
+public enum Item implements Serializable{
     
-    private String name;
-    private int survivalPoints;
-    private double itemCost;
-    private String categoryName;
+    TUNA("Tuna", 1, 10,"Kitchen"),
+    PROTEIN_BAR("Protein Bar", 1, 10, "Kitchen"),
+    BEANS("Beans", 1, 10, "Kitchen"),
+    CHOCOLATE("Chocolate", 2, 10, "Kitchen"),
+    COOKIES("Cookies", 3, 10, "Kitchen"),
+    CANDY("Candy", 1, 10, "Kitchen"),
+    JACKET("Jacket", 20, 50, "Bedroom"),
+    SWEATSHIRT("Sweatshirt", 25, 50, "Bedroom"),
+    SHOES("Shoes", 20, 50, "Bedroom"),
+    HYGIENE_KIT("Hygiene Kit", 10, 30,"Bathroom"),
+    TOILET_PAPER("Toilet paper", 5, 20, "Bathroom"),
+    MEDICINE("Medicine", 5, 30, "Bathroom"); 
+    
+    private final String itemDescription;
+    private final int itemCost;        
+    private final int survivalPoints;
+    private final String categoryName;
 
-    public Item() {
+    Item(String item, int cost, int points, String category) {
+        this.itemDescription = item;
+        this.itemCost = cost;
+        this.survivalPoints = points;
+        this.categoryName = category;
     }
 
-
-    public String getName() {
-        return name;
+    public String getItemDescription() {
+        return itemDescription;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getSurvivalPoints() {
-        return survivalPoints;
-    }
-
-    public void setSurvivalPoints(int survivalPoints) {
-        this.survivalPoints = survivalPoints;
-    }
-
-    public double getItemCost() {
+    public int getItemCost() {
         return itemCost;
     }
-
-    public void setItemCost(double itemCost) {
-        this.itemCost = itemCost;
+    
+    public int getSurvivalPoints() {
+        return survivalPoints;
     }
 
     public String getCategoryName() {
         return categoryName;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.categoryName);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (this.itemCost != other.itemCost) {
-            return false;
-        }
-        if (!Objects.equals(this.categoryName, other.categoryName)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" + "name=" + name + ", survivalPoints=" + survivalPoints + ", itemCost=" + itemCost + ", categoryName=" + categoryName + '}';
-    }
-    
     ///////////////////////////////////
     //METHODS
     ///////////////////////////////////
