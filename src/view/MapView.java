@@ -10,6 +10,15 @@ package view;
  * @author maloriegomm
  */
 public class MapView extends View{
+
+    public MapView(String menuString) {
+        super(menuString);
+    }
+
+    @Override
+    public boolean doAction(char input) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
