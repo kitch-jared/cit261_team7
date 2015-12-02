@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exception.MapException;
 import model.Location;
 import model.MainMap;
 import model.Player;
@@ -43,14 +44,14 @@ public class MapControl {
      
     }
    
-    public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) {
+    public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) throws MapException {
         
         if(timeRemaining < 0) {
-		return -1;
+		throw new MapException("Time is less than 0");
         }
                 
 	if((deliveryTime + timeToDeduct > timeRemaining) || (deliveryTime + timeToDeduct < 0)){
-		return -1;
+		throw new MapException("You do not have enough time left");
         }
         
 	timeRemaining = timeRemaining - (deliveryTime + timeToDeduct);
