@@ -5,6 +5,7 @@
  */
 package model;
 
+import Exception.MapException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -146,6 +147,26 @@ public class Game implements Serializable {
      */
     
     
-   
+   public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) throws MapException {
+        
+        if(timeRemaining < 0) {
+		throw new MapException("Time is less than 0");
+        }
+                
+	if((deliveryTime + timeToDeduct > timeRemaining) || (deliveryTime + timeToDeduct < 0)){
+		throw new MapException("You do not have enough time left");
+        }
+        
+	timeRemaining = timeRemaining - (deliveryTime + timeToDeduct);
+        
+	return timeRemaining;
+    }
+    
+    public int calcTimeToDeduct(int timeRemaining) {
+    
+        int calcTimeToDeduct = timeRemaining - 1;
+            
+            return calcTimeToDeduct;
+        }
 }
 

@@ -37,34 +37,7 @@ public class MapControl {
         gameControl.assignNamesToLocations(map);
         return map;
     }
-    
-    public void move(Location l){
-    
-       System.out.println(l);
-     
-    }
-   
-    public int calcTimeRemaining(int timeRemaining, int timeToDeduct, int deliveryTime) throws MapException {
-        
-        if(timeRemaining < 0) {
-		throw new MapException("Time is less than 0");
-        }
-                
-	if((deliveryTime + timeToDeduct > timeRemaining) || (deliveryTime + timeToDeduct < 0)){
-		throw new MapException("You do not have enough time left");
-        }
-        
-	timeRemaining = timeRemaining - (deliveryTime + timeToDeduct);
-        
-	return timeRemaining;
-    }
-    
-    public int calcTimeToDeduct(int timeRemaining) {
-    
-        int calcTimeToDeduct = timeRemaining - 1;
-            
-            return calcTimeToDeduct;
-        }
+
     
     private static Location createLocation() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -76,6 +49,13 @@ public class MapControl {
     
         
     }*/
+    
+        
+//    public void move(Location l){
+//    
+//       System.out.println(l);
+//     
+//    }
 }
 
   
