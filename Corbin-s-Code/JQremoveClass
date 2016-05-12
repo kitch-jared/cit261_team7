@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			.blueP{
+				color: blue;
+			}
+			
+			.greenP{
+				background-color: green;
+				color:white;
+			}
+			
+			button{
+				padding: .5em;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("p").removeClass("greenP");
+				});
+			});
+		</script>
+
+	</head>
+
+		<body>
+
+			<div>
+				<p class="blueP">This is the fist paragraph.</p>
+				<p class="greenP">This is the second paragraph.</p>
+			</div>
+
+			<button>Change color of the second paragraph</button>
+
+		</body>
+</html>
