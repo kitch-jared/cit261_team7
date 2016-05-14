@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+
+		<style>
+			.redP{
+				color: red;
+			}
+			
+			button{
+				padding: .5em;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("div").addClass("redP");
+				});
+			});
+		</script>
+
+	</head>
+
+		<body>
+
+			<div>
+				<p>This is the fist paragraph.</p>
+				<p>This is the second paragraph.</p>
+			</div>
+
+			<button>Change color of the paragraphs</button>
+
+		</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			div{
+				padding: .5em;
+				background-color: purple;
+				margin-bottom:1em;
+				color:white;
+			}
+			
+			button{
+				padding: .5em;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("div").css("background-color","black");
+				});
+			});
+		</script>
+
+	</head>
+
+		<body>
+
+			<div>
+			<p>This is an example of the .css() Method.</p>
+			</div>
+
+			<button>Change color of div</button>
+
+		</body>
+</html>
