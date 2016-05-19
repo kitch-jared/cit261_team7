@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JSON Serialization</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type ='text/javascript'>
+        
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        document.write(obj1.user); 
+        document.write("<hr />");
+        document.write(obj1.user+ " is not from  " + obj3.country + " but the " + obj1.country + ".");
+        obj3.country = "Italy";
+        document.write("<hr />");
+        document.write(obj1.user+ " is not from  " + obj3.country + " but the " + obj1.country + ".");
+        document.write("<hr />");
+        document.write(obj4.u2.user);
+        document.write("<hr />");
+        document.write(obj4["u2"]["user"]);
+        document.write("<hr />");
+        
+        var flowers = ["plumeria","hibiscus","ginger"];
+        var trees = ["coconut","banana","breadfruit"];
+        var obj5 = {arr1:flowers, arr2:trees};
+        document.write(obj5.arr1[1]);
+        document.write("<hr />");
+        document.write(obj5.arr1[1] + " and " + obj5.arr2[1] + " are found in the tropics.");
+        document.write("<hr />");
+        
+        var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+        var obj = JSON.parse(text);
+        document.write(obj.name + "<br>" + obj.street + "<br>" +obj.phone);
+        document.write("<hr />");
+        
+        var info = {"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"};
+        var data = JSON.stringify(info);
+        document.write(data);
+        </script>
+    </head>
+    <body>
+        
+    
+    </body>
+</html>
