@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JSON Serialization</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="CSS.css">-->
+        <link rel="stylesheet" href="../CSS.css" type="text/css"/>
+        
+        <style>
+            p {
+                width:600px;
+            }
+            button {
+                background: cadetblue;
+                width: 100px;
+                height: 35px;
+                border-radius: 8px;
+                transition-property: background;
+                transition-duration: 1s;
+                transition-timing-function: linear;
+            }    
+            button:hover {
+                background:#ff7b29;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul id="navbar">
+                <li><a href="/index.php">Home</a></li>
+                <li><a href="/methodologies.php">Standard Methodologies</a></li>
+                <li><a href="/interface.php">User Interface</a></li>
+                <li><a href="/jsobjects.php">JavaScript Objects</a></li>
+                <li><a href="/dom.php">DOM Manipulation</a></li>
+                <li><a href="/css3_transitions.php">CSS3 Transitions</a></li>
+                <li><a href="/css3_animations.php">CSS3 Animations</a></li>
+                <li><a href="/local_storage.php">Local Data Storage</a></li>
+                <li><a href="/ajax.php">AJAX Interactions</a></li>
+                <li><a href="json.php">JSON</a></li>
+            </ul>
+        </div>   
+        <h1>JSON Data Serialization: JavaScript Object Notation</h1>
+        <br>
+        
+        <p>Here's the PowerPoint I created and presented to my group.
+            <a href="https://docs.google.com/presentation/d/1ulOzVP8RRyP8Xn3eQ1lJLwiu9Q93eKv0yG5qicwFJ5g/edit#slide=id.p">
+                JSON Slides
+            </a>        
+        </p>
+        <br>
+        <h3 onmouseover="mOver(this)" onmouseout="mOut(this)">Creating and Calling JSON Objects</h3>
+            <br>
+            <p>This requires us to use curly braces and list name/value pairs.
+            The name field can be anything you would like to call your object, and you
+            determine the value of the name. The name field can be used multiple times.
+            Names and values are written within curly braces with the name listed first,
+            followed by a colon, and then the value. The value must be enclosed in
+            double quotes, " ". When written as parsed objects with JSON.parse(),
+            the name field must also be enclosed in " ".</p>
+            <br>
+            var obj1 = {user:"John", age:22, country:"United States"};
+            <br><br>
+            var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+            <br><br>
+            var obj3 = {user:"Will", age:55, country:"India"};
+            <br><br>
+            var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+            <br><br>
+            <p>If we want to call the user in var obj1, we can call it directly
+               in the following way:
+               <br><br> 
+               document.getElementById("firstPerson").innerHTML = obj1.user;
+            </p><br>
+             <button id="btn1">obj1.user</button>
+             <br><br>
+             <div id="firstPerson"></div>
+             <br>
+             <p>As in JavaScript, we can reference and call different variables.
+             For example, I can create a string with  variables to say, "John 
+             is not from India but the United States.
+             <br>
+             document.getElementById("objects").innerHTML = obj1.user+ " is not from  "
+             + obj3.country + " but the " + obj1.country + ".";</p>
+             <br><br>
+             <button id="btn2" type="button">objects</button>
+             <br><br>
+             <div id="objects"></div>
+             <br>
+             <p>With JSON objects, we do not have to return to the original variable
+             to make changes. We can make changes down the line. Returning to the 
+             previous example, if I want to say Italy instead of India, I would change it
+             like so:<br><br>
+             obj3.country = "Italy";
+             <br>
+             document.getElementById("objects").innerHTML = obj1.user+ " is not from  "
+             + obj3.country + " but the " + obj1.country + ".";
+             <br><br>
+             This should say that "John is not from Italy but the United States."
+             <br><br>
+             <button id="b1" type="button" onclick="change()">change</button>
+             </p><br>
+             <div id="cItaly"></div>
+             <br>
+             <p>You can also write JSON objects in a couple of different ways. The following
+             two lines of code will produce the same result. They both refer us to
+             obj4 first, then refer us to user "u2" which refers to obj2's user, Abby.</p>
+             <br>
+             document.getElementById("first").innerHTML = obj4.u2.user;
+             <br><br>
+             <button id="cNd1" type="button">first</button>
+             <br><br>
+             <div id="first"></div>
+             <br>
+             document.getElementById("second").innerHTML = (obj4["u2"]["user"]);
+             <br><br>
+             <button  type="button" onclick="cNoDiff2()">second</button>
+             <br><br>
+             <div id="second"></div>
+             <br>
+             <p>JSON objects can also be written as an array.
+             <br><br>
+             var flowers = ["plumeria","hibiscus","ginger"];
+             <br><br>
+             var trees = ["coconut","banana","breadfruit"];
+             <br><br>
+             var obj5 = {arr1:flowers, arr2:trees};
+             <br><br>
+             document.getElementById("array").innerHTML = (obj5.arr1[1]);
+             <br><br>
+             <p>The above code refers to the first array in var obj5 called flowers 
+             and wants to pull the object in index 1. Since arrays start an index
+             with 0, the object in index 1 is hibiscus.</p>
+             <br><br>
+             <button type="button" onclick="myArr1()">array</button>
+             <br><br>
+             <div id="array1"></div>
+             <br>
+             <p>You can also refer to multiple objects in an array and combine it 
+             with text.
+             <br><br>
+             document.getElementById("arrays").innerHTML = (obj5.arr1[1] + 
+             " and " + obj5.arr2[1] + " are found in the tropics.");
+             <br><br>
+             <p>Obj5 refers to var obj5; arr1 refers to the array called flowers; and
+             [1] refers to the object in index 1 which would be hibiscus. Again,
+             obj5 refers to var obj5; arr2 refers to the second array called trees;
+             and [1] refers to the object in index 1, which would be banana.</p>
+             <br>
+             <button type="button" onclick="myArr2()">arrays</button>
+             <br><br>
+             <div id="array2"></div>
+             <br>
+             <h3>JSON Serialization</h3>
+             <br>
+             <p>JSON is used in data exchange between JavaScript and servers.
+             Regardless of the server technology used, JavaScript is able to 
+             communicate with that particular technology through JSON. JSON  
+             enables JavaScript to convert objects into string to send to the
+             server, which is knkown as serialization.</p>
+             <br>
+             <p>Here we have an object that needs to be converted to a string:
+                 <br><br>
+                 var info = {"name":"John Johnson","street":"Oslo West 16","phone":"555
+                 1234567"};
+                 <br><br>
+                 We are able to do so by using the stringify function. 
+                 <br><br>
+                 var data = JSON.stringify(info);
+                 <br><br>
+                 This code document.getElementById("serialize").innerHTML = data;
+                 produces this string:</p>
+                 <br>
+                 <button type="button" onclick="jSerial()">Serialize</button>
+                 <br><br>
+             <div id="serialize"></div>
+             <br>
+             <h3>JSON Deserialization</h3>
+             <br>
+             <p>There is also JSON deserialization which converts strings from the
+             server to objects. Here, we have a string: 
+             <br><br>
+             var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+             <br><br>
+             To convert it, we can use the JSON parser, JSON.parse()
+             <br><br>
+             var obj = JSON.parse(text);
+             <br><br>
+             This will take the string, parse, it and convert it like so:</p>
+             <br>
+             <button type="button" onclick="jDeserial()">Deserialize</button>
+             <br><br>
+             <div id="deserialize"></div>
+        <script type ='text/javascript'>
+        function mOver(obj) {
+            obj.innerHTML = "JSON Objects";
+            }
+        function mOut(obj) {
+            obj.innerHTML = "Creating and Calling JSON Objects";
+        }
+        
+        document.getElementById("btn1").addEventListener("click", myObjects);
+        function myObjects() {
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        document.getElementById("firstPerson").innerHTML = obj1.user;
+        }
+        document.getElementById("btn2").addEventListener("click", cObjects);
+        function cObjects() {
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        document.getElementById("objects").innerHTML = obj1.user+ " is not from  " + obj3.country + " but the " + obj1.country + ".";
+        }
+        document.getElementById("cNd1").addEventListener("click", change);
+        function change() {
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        obj3.country = "Italy";
+        document.getElementById("cItaly").innerHTML = obj1.user+ " is not from  " + obj3.country + " but the " + obj1.country + ".";
+        }
+        function cNoDiff1() {
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        document.getElementById("first").innerHTML = obj4.u2.user;
+        }
+        function cNoDiff2() {
+        var obj1 = {user:"John", age:22, country:"United States"};
+        var obj2 = {user:"Abby", age: 35, country:"United Kingdom"};
+        var obj3 = {user:"Will", age:55, country:"India"};
+        var obj4 = {u1:obj1, u2:obj2, u3:obj3};
+        document.getElementById("second").innerHTML = (obj4["u2"]["user"]);
+        }
+        function myArr1() {
+        var flowers = ["plumeria","hibiscus","ginger"];
+        var trees = ["coconut","banana","breadfruit"];
+        var obj5 = {arr1:flowers, arr2:trees};
+        document.getElementById("array1").innerHTML = (obj5.arr1[1]);
+        }
+        function myArr2() {
+        var flowers = ["plumeria","hibiscus","ginger"];
+        var trees = ["coconut","banana","breadfruit"];
+        var obj5 = {arr1:flowers, arr2:trees};
+        document.getElementById("array2").innerHTML = (obj5.arr1[1] + " and " +
+                obj5.arr2[1] + " are found in the tropics.");
+        }
+        function jSerial() {
+        var info = {"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"};
+        var data = JSON.stringify(info);
+        document.getElementById("serialize").innerHTML = data;
+        }
+        function jDeserial() {
+        var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+        var obj = JSON.parse(text);
+        document.getElementById("deserialize").innerHTML = obj.name + "<br>" + "<br>"
+                + obj.street + "<br>" + "<br>" +obj.phone + "<br>" + "<br>";
+        }
+        </script>
+    </body>
+</html>
